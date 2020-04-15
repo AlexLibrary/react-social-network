@@ -1,0 +1,21 @@
+.Page_Sidebar_Menu {
+  display: flex;
+  flex-direction: column;
+
+  & a {
+    color: #444;
+    margin-bottom: 15px;
+    border-left: 5px solid transparent;
+    padding-left: 10px;
+    &:hover {
+      border-left: 5px solid #aaa;
+    }
+    &.active{
+      border-left: 5px solid #555;
+      &:hover {
+        border-left: 5px solid #555;
+      }
+    }
+  }
+}
+
