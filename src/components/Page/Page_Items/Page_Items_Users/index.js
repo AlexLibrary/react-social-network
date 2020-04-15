@@ -5,8 +5,8 @@ const S = 'Page_Items_Users'
 
 class Page_Items_Users extends React.Component {
 
-  constructor(props) {
-    super(props)
+  componentDidMount() {
+    console.log('componentDidMount');
     if (this.props.users.length === 0) {
       axios.get('https://social-network.samuraijs.com/api/1.0/users?page=1&count=4', {
         withCredentials: true,
@@ -19,6 +19,9 @@ class Page_Items_Users extends React.Component {
           this.props.setUsers(response.data.items)
         });
     }
+  }
+  componentWillUnmount() {
+    console.log('componentWillUnmount');
   }
 
   getUsers = () => {
