@@ -7,11 +7,22 @@
   margin: 20px 0;
   border-radius: 3px;
   button {
+    cursor: pointer;
+    &:hover {
+      background-color: #777;
+    }
+  }
+  &__lists{
+    margin-bottom: 10px;
+    &__item {
+      margin-right: 10px;
+      color: #222;
       cursor: pointer;
-      &:hover {
-        background-color: #777;
+      &.active {
+        font-weight: 700;
       }
     }
+  }
   &__wrapper {
     display: flex;
     flex-direction: row;

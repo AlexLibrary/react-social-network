@@ -7,54 +7,58 @@ class Page_Items_Users extends React.Component {
 
   componentDidMount() {
     console.log('componentDidMount');
-    if (this.props.users.length === 0) {
-      axios.get('https://social-network.samuraijs.com/api/1.0/users?page=1&count=4', {
-        withCredentials: true,
-        headers: {
-          // 'API-KEY': '2770717b-7856-4262-9cce-04c5522365f3'
-        }
-      })
-        .then(response => {
-          console.log('--- response.data', response.data)
-          this.props.setUsers(response.data.items)
-        });
-    }
+    // if (this.props.users.length === 0) {
+    axios.get(`https://social-network.samuraijs.com/api/1.0/users?page=${this.props.currentPage}&count=${this.props.pageSize}`, {
+      withCredentials: true,
+      headers: {
+        // 'API-KEY': '2770717b-7856-4262-9cce-04c5522365f3'
+      }
+    })
+      .then(response => {
+        console.log('--- response.data', response.data)
+        this.props.setUsers(response.data.items)
+        this.props.setTotalUsersCount(response.data.totalCount)
+      });
+    // }
   }
-  componentWillUnmount() {
-    console.log('componentWillUnmount');
-  }
+  // componentWillUnmount() {
+  //   console.log('componentWillUnmount');
+  // }
 
-  getUsers = () => {
-    if (this.props.users.length === 0) {
-      /* FETCH */
-      // fetch('https://social-network.samuraijs.com/api/1.0/users', {
-      //   method: 'GET',
-      //   headers: {
-      //    'API-KEY': '2770717b-7856-4262-9cce-04c5522365f3'
-      //   }
-      // })
-      //   .then(resp => resp.json())
-      //   .then(function (data) {
-      //     console.log('--- data', data);
-      //   })
-      /* AXIOS */
-      axios.get('https://social-network.samuraijs.com/api/1.0/users?page=1&count=4', {
-        withCredentials: true,
-        headers: {
-          // 'API-KEY': '2770717b-7856-4262-9cce-04c5522365f3'
-        }
-      })
-        .then(response => {
-          console.log('--- response.data', response.data)
-          this.props.setUsers(response.data.items)
-        });
-    }
+  handleClick = (pageNumber) => {
+    this.props.setCurrentPage(pageNumber);
+    axios.get(`https://social-network.samuraijs.com/api/1.0/users?page=${pageNumber}&count=${this.props.pageSize}`, {
+      withCredentials: true,
+      headers: {
+        // 'API-KEY': '2770717b-7856-4262-9cce-04c5522365f3'
+      }
+    })
+      .then(response => {
+        console.log('--- response.data', response.data)
+        this.props.setUsers(response.data.items)
+      });
   }
 
   render() {
+
+    const createNumbers = () => {
+      const numbers = []
+      const pages = Math.ceil(this.props.totalUsersCount / this.props.pageSize)
+      for (let i = 1; i <= pages; i++) {
+        numbers.push(
+          <span onClick={() => this.handleClick(i)} className={
+            this.props.currentPage === i ? `${S}__lists__item active` : `${S}__lists__item`
+          }>{i}</span>
+        )
+      }
+      return numbers
+    }
+
     return (
       <div className={`${S}`}>
-        <button onClick={this.getUsers}>getUsers</button>
+        <div className={`${S}__lists`}>
+          {createNumbers()}
+        </div>
         {
           this.props.users.map(user => <div key={user.id}>
             <div className={`${S}__wrapper`}>
