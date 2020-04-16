@@ -34,6 +34,10 @@
   &__face {
     display: flex;
     flex-direction: column;
+    img {
+      width: 90px;
+      height: auto;
+    }
   }
   &__about {
     display: flex;
