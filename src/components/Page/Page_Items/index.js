@@ -10,7 +10,7 @@ const PageItems = () => {
   return (
     <div className={`${S}`}>
       <Route path='/dialogs' render={() => <PageItemsDialogs />} />
-      <Route path='/profile' render={() => <PageItemsProfile />} />
+      <Route path='/profile/:userId?' render={() => <PageItemsProfile />} />
       <Route path='/users' render={() => <PageItemsUsers />} />
     </div>
   )
