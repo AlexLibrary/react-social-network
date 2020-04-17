@@ -1,6 +1,6 @@
 import React from "react";
 import { BrowserRouter } from "react-router-dom"
-import Header from "./components/Header";
+import HeaderContainer from "./components/Header/Container";
 import Page from "./components/Page";
 import Footer from "./components/Footer";
 import './App.scss'
@@ -10,7 +10,7 @@ const App = () => {
   return (
     <BrowserRouter>
       <div className={`${S}`}>
-        <Header />
+        <HeaderContainer />
         <Page />
         <Footer />
       </div>

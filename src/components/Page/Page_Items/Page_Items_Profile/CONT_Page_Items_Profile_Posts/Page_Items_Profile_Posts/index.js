@@ -17,9 +17,6 @@ const Page_Items_Profile_Posts = (props) => {
     return post
   }
 
-  console.log(props.profile.photos.small);
-
-
   return (
     <div className={`${S}`}>
       <h2>My posts</h2>
