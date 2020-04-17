@@ -20,4 +20,4 @@ export default store;
 //   interface Window { store: any; }
 // }
 
-// window.store = store;
+window.store = store;

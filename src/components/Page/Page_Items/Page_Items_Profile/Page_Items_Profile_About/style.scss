@@ -1,4 +1,9 @@
 .Page_Items_Profile_About {
   display: flex;
+  flex-direction: column;
+  img {
+    max-width: 600px;
+    height: 300px;
+  }
 }
 

@@ -1,13 +1,29 @@
 import React from "react";
-import PageItemsProfilePostsitem from "./Page_Items_Profile_Posts_item";
 import './style.scss'
 const S = 'Page_Items_Profile_Posts';
 
 const Page_Items_Profile_Posts = (props) => {
+
+  const SetPosts = () => {
+    const post = props.posts.map(obj =>
+      <div className={`${S}__items`} key={obj.id}>
+        <img src={props.profile.photos.small ? props.profile.photos.small : "https://placem.at/people?w=70&h=70&random=1"} alt="" />
+        {obj.message}
+        <div className={`${S}__likes`}>
+          likes: {obj.likes}
+        </div>
+      </div>
+    )
+    return post
+  }
+
+  console.log(props.profile.photos.small);
+
+
   return (
     <div className={`${S}`}>
       <h2>My posts</h2>
-      {props.posts.map(obj => <PageItemsProfilePostsitem message={obj.message} likes={obj.likes} key={obj.id} />)}
+      <SetPosts />
     </div>
   )
 }

@@ -3,7 +3,8 @@ import Page_Items_Profile_Posts from "./Page_Items_Profile_Posts";
 import { connect } from "react-redux"
 
 const mapStateToProps = (state) => ({
-  posts: state.profile.posts
+  posts: state.profile.posts,
+  profile: state.profile.profile
 })
 
 const mapDispatchToProps = (dispatch) => ({})

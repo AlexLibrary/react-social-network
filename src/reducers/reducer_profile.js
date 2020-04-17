@@ -1,5 +1,6 @@
 const SEND_POST = 'SEND_POST'
 const UPDATE_INPUT_POST = 'UPDATE_INPUT_POST'
+const SET_USER_PROFILE = 'SET_USER_PROFILE'
 
 const initialState = {
   inputValue: '',
@@ -7,7 +8,8 @@ const initialState = {
     { id: 0, message: 'it\'s my first most', likes: 511 },
     { id: 1, message: 'how are you', likes: 200 },
     { id: 2, message: 'hi, how are you', likes: 101 },
-  ]
+  ],
+  profile: undefined
 }
 
 const profileReducer = (state = initialState, action) => {
@@ -31,6 +33,11 @@ const profileReducer = (state = initialState, action) => {
         ...state,
         inputValue: action.newText
       }
+    case SET_USER_PROFILE:
+      return {
+        ...state,
+        profile: action.profile
+      }
     default:
       return state;
   }
@@ -42,6 +49,10 @@ export const sendPostActionCreator = () => ({
 export const updateInputPostActionCreator = textareaValue => ({
   type: UPDATE_INPUT_POST,
   newText: textareaValue
+})
+export const setUserProfile = profile => ({
+  type: SET_USER_PROFILE,
+  profile
 })
 
 export default profileReducer

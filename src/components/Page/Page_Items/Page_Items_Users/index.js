@@ -1,5 +1,6 @@
 import React from 'react'
 import './style.scss'
+import { NavLink } from 'react-router-dom'
 const S = 'Page_Items_Users'
 
 const Page_Items_Users = (props) => {
@@ -27,11 +28,14 @@ const Page_Items_Users = (props) => {
           <div key={user.id}>
             <div className={`${S}__wrapper`}>
               <div className={`${S}__face`} >
-                <img src={
-                  user.photos.small === null
-                    ? `https://placem.at/people?w=90&h=90&random=${user.id}`
-                    : user.photos.small
-                } alt="" />
+                <NavLink to={`/profile/${user.id}`}>
+                  <img src={
+                    user.photos.small === null
+                      ? `https://placem.at/people?w=90&h=90&random=${user.id}`
+                      : user.photos.small
+                  } alt="" />
+                </NavLink>
+
                 {user.followed
                   ? <button onClick={() => props.unfollow(user.id)}>unfollow</button>
                   : <button onClick={() => props.follow(user.id)}>follow</button>
