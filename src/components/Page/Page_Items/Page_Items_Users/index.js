@@ -38,21 +38,25 @@ const Page_Items_Users = (props) => {
                 </NavLink>
 
                 {user.followed
-                  ? <button onClick={() => {
+                  ? <button disabled={props.followingInProgress.some(id => id === user.id)} onClick={() => {
+                    props.toggleFollowingInProgress(true, user.id);
                     usersAPI.unfollow(user.id).then(data => {
                       console.log('--- data', data)
                       if (data.resultCode === 0) {
                         props.unfollow(user.id)
                       }
+                      props.toggleFollowingInProgress(false, user.id);
                     });
 
                   }}>unfollow</button>
-                  : <button onClick={() => {
+                  : <button disabled={props.followingInProgress.some(id => id === user.id)} onClick={() => {
+                    props.toggleFollowingInProgress(true, user.id);
                     usersAPI.follow(user.id).then(data => {
                       console.log('--- data', data)
                       if (data.resultCode === 0) {
                         props.follow(user.id)
                       }
+                      props.toggleFollowingInProgress(false, user.id);
                     });
 
                   }}>follow</button>
