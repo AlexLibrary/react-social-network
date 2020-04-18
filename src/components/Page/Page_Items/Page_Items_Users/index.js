@@ -1,7 +1,7 @@
 import React from 'react'
 import './style.scss'
 import { NavLink } from 'react-router-dom'
-import axios from 'axios'
+import { usersAPI } from '../../../../api'
 const S = 'Page_Items_Users'
 
 const Page_Items_Users = (props) => {
@@ -39,35 +39,21 @@ const Page_Items_Users = (props) => {
 
                 {user.followed
                   ? <button onClick={() => {
-
-                    axios.delete(`https://social-network.samuraijs.com/api/1.0/follow/${user.id}`, {
-                      withCredentials: true,
-                      headers: {
-                        'API-KEY': '2770717b-7856-4262-9cce-04c5522365f3'
+                    usersAPI.unfollow(user.id).then(data => {
+                      console.log('--- data', data)
+                      if (data.resultCode === 0) {
+                        props.unfollow(user.id)
                       }
-                    })
-                      .then(response => {
-                        console.log('--- response.data', response.data)
-                        if (response.data.resultCode === 0) {
-                          props.unfollow(user.id)
-                        }
-                      });
+                    });
 
                   }}>unfollow</button>
                   : <button onClick={() => {
-
-                    axios.post(`https://social-network.samuraijs.com/api/1.0/follow/${user.id}`, {}, {
-                      withCredentials: true,
-                      headers: {
-                        'API-KEY': '2770717b-7856-4262-9cce-04c5522365f3'
+                    usersAPI.follow(user.id).then(data => {
+                      console.log('--- data', data)
+                      if (data.resultCode === 0) {
+                        props.follow(user.id)
                       }
-                    })
-                      .then(response => {
-                        console.log('--- response.data', response.data)
-                        if (response.data.resultCode === 0) {
-                          props.follow(user.id)
-                        }
-                      });
+                    });
 
                   }}>follow</button>
                 }

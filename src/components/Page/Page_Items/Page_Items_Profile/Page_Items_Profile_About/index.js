@@ -28,12 +28,6 @@ const Page_Items_Profile_About = (props) => {
           ? <div><h2>Ищу работу</h2> {props.profile.lookingForAJobDescription}</div>
           : undefined
         }
-        {/*
-          lookingForAJob: true
-          lookingForAJobDescription: "не ищу, а дурачусь"
-          fullName: "samurai d new name"
-          userId: 2
-        */}
       </div>
 
     </div>
