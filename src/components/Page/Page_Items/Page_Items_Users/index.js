@@ -1,6 +1,7 @@
 import React from 'react'
 import './style.scss'
 import { NavLink } from 'react-router-dom'
+import axios from 'axios'
 const S = 'Page_Items_Users'
 
 const Page_Items_Users = (props) => {
@@ -37,8 +38,38 @@ const Page_Items_Users = (props) => {
                 </NavLink>
 
                 {user.followed
-                  ? <button onClick={() => props.unfollow(user.id)}>unfollow</button>
-                  : <button onClick={() => props.follow(user.id)}>follow</button>
+                  ? <button onClick={() => {
+
+                    axios.delete(`https://social-network.samuraijs.com/api/1.0/follow/${user.id}`, {
+                      withCredentials: true,
+                      headers: {
+                        'API-KEY': '2770717b-7856-4262-9cce-04c5522365f3'
+                      }
+                    })
+                      .then(response => {
+                        console.log('--- response.data', response.data)
+                        if (response.data.resultCode === 0) {
+                          props.unfollow(user.id)
+                        }
+                      });
+
+                  }}>unfollow</button>
+                  : <button onClick={() => {
+
+                    axios.post(`https://social-network.samuraijs.com/api/1.0/follow/${user.id}`, {}, {
+                      withCredentials: true,
+                      headers: {
+                        'API-KEY': '2770717b-7856-4262-9cce-04c5522365f3'
+                      }
+                    })
+                      .then(response => {
+                        console.log('--- response.data', response.data)
+                        if (response.data.resultCode === 0) {
+                          props.follow(user.id)
+                        }
+                      });
+
+                  }}>follow</button>
                 }
               </div>
               <div className={`${S}__about`} >
@@ -56,7 +87,7 @@ const Page_Items_Users = (props) => {
             </div>
           </div>)
       }
-      <button>SHOW_MORE</button>
+      {/* <button>SHOW_MORE</button> */}
     </div>
   )
 }
