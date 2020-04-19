@@ -4,7 +4,7 @@ import profileReducer from "./reducers/reducer_profile";
 import dialogsReducer from "./reducers/reducer_dialogs";
 import sidebarReducer from "./reducers/reducer_sidebar";
 import usersReducer from './reducers/reducer_users';
-import authReducer from './reducers/auth_users';
+import authReducer from './reducers/reducer_auth';
 
 const reducers = combineReducers({
   profile: profileReducer,

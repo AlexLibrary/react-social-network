@@ -49,9 +49,9 @@ export const sendPostActionCreator = () => ({ type: SEND_POST })
 export const updateInputPostActionCreator = textareaValue => ({ type: UPDATE_INPUT_POST, newText: textareaValue })
 export const setUserProfileAction = profile => ({ type: SET_USER_PROFILE, profile })
 /* ThunkCreator */
-export const setUserProfile = (userId = 2) => (dispatch) => {
+export const getUserProfile = (userId = 2) => (dispatch) => {
 
-  usersAPI.getUsersProfile(userId).then(data => {
+  usersAPI.getProfile(userId).then(data => {
     console.log('--- data', data)
     dispatch(setUserProfileAction(data))
   });
