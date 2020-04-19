@@ -3,7 +3,6 @@ import { authAPI } from "../api";
 const SET_AUTH_USER_DATA = 'SET_AUTH_USER_DATA'
 
 const initialState = {
-  //{"data":{},"messages":["You are not authorized"],"resultCode":1}
   userId: null,
   email: null,
   login: null,
@@ -28,6 +27,7 @@ export const setAuthUserData = (userId, email, login) => ({ type: SET_AUTH_USER_
 export const getAuthUserData = () => (dispatch) => {
 
   authAPI.me().then(data => {
+    console.log('---data(authAPI.me)', data)
     if (data.resultCode === 0) {
       const { id, email, login } = data.data
       dispatch(setAuthUserData(id, email, login));

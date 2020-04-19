@@ -1,0 +1,13 @@
+.Page_Items_Login {
+  display: flex;
+  flex-direction: column;
+  background: white;
+  box-shadow: 0 0 11px #cccccc;
+  padding: 25px 40px;
+  margin: 20px 0;
+  border-radius: 3px;
+  & h1 {
+    margin-bottom: 20px;
+  }
+}
+

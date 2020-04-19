@@ -11,6 +11,44 @@
     display: flex;
     flex-wrap: wrap;
     width: 100%;
+    &__friends{
+      display: flex;
+      flex-direction: column;
+      width: 30%;
+      & a {
+        color: #444;
+        padding: 3px 15px;
+        margin-bottom: 15px;
+        margin-bottom: 10px;
+        border-left: 5px solid transparent;
+        &:hover{
+          border-left: 5px solid #666;
+        }
+        &.active {
+          border-left: 5px solid #222;
+        }
+      }
+    }
+    &__messages {
+      width: 70%;
+      &__input{
+        display: flex;
+        flex-direction: column;
+        padding-top: 20px;
+        & button {
+          background-color: #999;
+          cursor: pointer;
+          &:hover {
+            background-color: #777;
+          }
+        }
+        & textarea {
+          color: #bbb;
+          padding: 10px;
+          background-color: #222;
+        }
+      }
+    }
   }
 }
 

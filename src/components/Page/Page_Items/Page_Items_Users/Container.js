@@ -5,11 +5,14 @@ import {
 } from '../../../../reducers/reducer_users';
 import PageItemsUsers from '.'
 import Preloader from '../../../modules/Preloader'
+import { Redirect } from 'react-router-dom';
 
 class UsersContainer extends React.Component {
 
   componentDidMount() {
-    this.props.getUsers(this.props.currentPage, this.props.pageSize)
+    if (this.props.isAuth) {
+      this.props.getUsers(this.props.currentPage, this.props.pageSize)
+    }
   }
 
   handleClick = (pageNumber) => {
@@ -18,9 +21,11 @@ class UsersContainer extends React.Component {
   }
 
   render() {
+    if (!this.props.isAuth) return <Redirect to={'/login'} />
     return <>
       {this.props.isFetching ? <Preloader /> : null}
       <PageItemsUsers
+        isAuth={this.props.isAuth}
         totalUsersCount={this.props.totalUsersCount}
         pageSize={this.props.pageSize}
         currentPage={this.props.currentPage}
@@ -40,7 +45,8 @@ const mapStateToProps = (state) => ({
   totalUsersCount: state.usersPage.totalUsersCount,
   currentPage: state.usersPage.currentPage,
   isFetching: state.usersPage.isFetching,
-  followingInProgress: state.usersPage.followingInProgress
+  followingInProgress: state.usersPage.followingInProgress,
+  isAuth: state.authPart.isAuth
 })
 
 export default connect(mapStateToProps, {

@@ -52,7 +52,7 @@ export const setUserProfileAction = profile => ({ type: SET_USER_PROFILE, profil
 export const getUserProfile = (userId = 2) => (dispatch) => {
 
   usersAPI.getProfile(userId).then(data => {
-    console.log('--- data', data)
+    console.log('---data(usersAPI.getProfile)', data)
     dispatch(setUserProfileAction(data))
   });
 
