@@ -2,7 +2,8 @@ import axios from 'axios'
 const PATH = 'https://social-network.samuraijs.com/api/1.0/'
 
 const instanceGet = axios.create({
-  baseURL: PATH
+  baseURL: PATH,
+  withCredentials: true
 });
 
 const instance = axios.create({
@@ -14,6 +15,10 @@ const instance = axios.create({
 });
 
 export const usersAPI = {
+  async authMe() {
+    const response = await instanceGet.get(`auth/me`);
+    return response.data;
+  },
   async getUsers(currentPage = 1, pageSize = 10) {
     const response = await instanceGet.get(`users?page=${currentPage}&count=${pageSize}`);
     return response.data;

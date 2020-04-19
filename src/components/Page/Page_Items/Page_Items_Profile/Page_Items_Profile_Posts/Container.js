@@ -1,4 +1,4 @@
-import Page_Items_Profile_Posts from "./Page_Items_Profile_Posts";
+import Page_Items_Profile_Posts from ".";
 
 import { connect } from "react-redux"
 

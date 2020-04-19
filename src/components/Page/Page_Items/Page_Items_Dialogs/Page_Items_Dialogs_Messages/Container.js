@@ -1,4 +1,4 @@
-import Page_Items_Dialogs_Messages from "./Page_Items_Dialogs_Messages";
+import Page_Items_Dialogs_Messages from ".";
 import { connect } from "react-redux"
 
 const mapStateToProps = (state) => ({

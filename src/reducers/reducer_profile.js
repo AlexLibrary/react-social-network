@@ -1,7 +1,9 @@
+import { usersAPI } from '../api'
+/* ActionConstant */
 const SEND_POST = 'SEND_POST'
 const UPDATE_INPUT_POST = 'UPDATE_INPUT_POST'
 const SET_USER_PROFILE = 'SET_USER_PROFILE'
-
+/* initState for Reducer */
 const initialState = {
   inputValue: '',
   posts: [
@@ -11,7 +13,7 @@ const initialState = {
   ],
   profile: undefined
 }
-
+/* Reducer */
 const profileReducer = (state = initialState, action) => {
   switch (action.type) {
     case SEND_POST:
@@ -42,17 +44,18 @@ const profileReducer = (state = initialState, action) => {
       return state;
   }
 }
+/* ActionCreator */
+export const sendPostActionCreator = () => ({ type: SEND_POST })
+export const updateInputPostActionCreator = textareaValue => ({ type: UPDATE_INPUT_POST, newText: textareaValue })
+export const setUserProfileAction = profile => ({ type: SET_USER_PROFILE, profile })
+/* ThunkCreator */
+export const setUserProfile = (userId = 2) => (dispatch) => {
 
-export const sendPostActionCreator = () => ({
-  type: SEND_POST
-})
-export const updateInputPostActionCreator = textareaValue => ({
-  type: UPDATE_INPUT_POST,
-  newText: textareaValue
-})
-export const setUserProfile = profile => ({
-  type: SET_USER_PROFILE,
-  profile
-})
+  usersAPI.getUsersProfile(userId).then(data => {
+    console.log('--- data', data)
+    dispatch(setUserProfileAction(data))
+  });
+
+}
 
 export default profileReducer

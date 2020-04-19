@@ -1,5 +1,5 @@
 import { sendPostActionCreator, updateInputPostActionCreator } from "../../../../../reducers/reducer_profile";
-import Page_Items_Profile_AddPost from "./Page_Items_Profile_AddPost";
+import Page_Items_Profile_AddPost from ".";
 import { connect } from "react-redux"
 
 const mapStateToProps = (state) => ({

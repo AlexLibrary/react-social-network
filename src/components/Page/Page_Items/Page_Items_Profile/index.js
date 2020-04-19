@@ -1,7 +1,7 @@
 import React from "react";
 import './style.scss'
-import CONTPageItemsProfilePosts from "./CONT_Page_Items_Profile_Posts";
-import CONTPageItemsProfileAddPost from "./CONT_Page_Items_Profile_AddPost";
+import PageItemsProfilePosts from "./Page_Items_Profile_Posts/Container";
+import PageItemsProfileAddPost from "./Page_Items_Profile_AddPost/Container";
 import PageItemsProfileAbout from "./Page_Items_Profile_About";
 import Preloader from '../../../modules/Preloader'
 const S = 'Page_Items_Profile';
@@ -14,8 +14,8 @@ const Page_Items_Profile = (props) => {
     <div className={`${S}`}>
       <h1>Id_{props.profile.userId}</h1>
       <PageItemsProfileAbout profile={props.profile} />
-      <CONTPageItemsProfilePosts />
-      <CONTPageItemsProfileAddPost />
+      <PageItemsProfilePosts />
+      <PageItemsProfileAddPost />
     </div>
   )
 }

@@ -1,5 +1,5 @@
-import Page_Items_Dialogs_Messages_Add from "./Page_Items_Dialogs_Messages_Add";
-import { sendMessageActionCreator, updateInputMessageActionCreator } from '../../../../../../../reducers/reducer_dialogs'
+import Page_Items_Dialogs_Messages_Add from ".";
+import { sendMessageActionCreator, updateInputMessageActionCreator } from '../../../../../../reducers/reducer_dialogs'
 import { connect } from "react-redux"
 
 const mapStateToProps = (state) => ({

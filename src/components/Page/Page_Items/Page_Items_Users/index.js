@@ -1,7 +1,6 @@
 import React from 'react'
 import './style.scss'
 import { NavLink } from 'react-router-dom'
-import { usersAPI } from '../../../../api'
 const S = 'Page_Items_Users'
 
 const Page_Items_Users = (props) => {
@@ -38,28 +37,14 @@ const Page_Items_Users = (props) => {
                 </NavLink>
 
                 {user.followed
-                  ? <button disabled={props.followingInProgress.some(id => id === user.id)} onClick={() => {
-                    props.toggleFollowingInProgress(true, user.id);
-                    usersAPI.unfollow(user.id).then(data => {
-                      console.log('--- data', data)
-                      if (data.resultCode === 0) {
-                        props.unfollow(user.id)
-                      }
-                      props.toggleFollowingInProgress(false, user.id);
-                    });
-
-                  }}>unfollow</button>
-                  : <button disabled={props.followingInProgress.some(id => id === user.id)} onClick={() => {
-                    props.toggleFollowingInProgress(true, user.id);
-                    usersAPI.follow(user.id).then(data => {
-                      console.log('--- data', data)
-                      if (data.resultCode === 0) {
-                        props.follow(user.id)
-                      }
-                      props.toggleFollowingInProgress(false, user.id);
-                    });
-
-                  }}>follow</button>
+                  ? <button
+                    disabled={props.followingInProgress.some(id => id === user.id)}
+                    onClick={() => { props.unfollow(user.id) }}
+                  >unfollow</button>
+                  : <button
+                    disabled={props.followingInProgress.some(id => id === user.id)}
+                    onClick={() => { props.follow(user.id) }}
+                  >follow</button>
                 }
               </div>
               <div className={`${S}__about`} >
