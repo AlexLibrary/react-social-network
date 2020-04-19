@@ -1,5 +1,5 @@
 import React from "react";
-import { NavLink, Redirect } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import './style.scss'
 const S = 'Page_Items_Dialogs';
 
@@ -20,8 +20,6 @@ const Page_Items_Dialogs = (props) => {
     const textareaValue = e.target.value;
     props.updateInputMessage(textareaValue)
   }
-
-  if (!props.isAuth) return <Redirect to={'/login'} />
 
   return (
     <div className={`${S}`}>

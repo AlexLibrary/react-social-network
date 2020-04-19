@@ -1,10 +1,10 @@
-import Page_Items_Dialogs from ".";
+import PageItemsDialogs from ".";
 import { sendMessageActionCreator, updateInputMessageActionCreator } from '../../../../reducers/reducer_dialogs'
 import { connect } from "react-redux"
+import { withAuthRedirect } from '../../../../hoc/withAuthRedirect';
 
 const mapStateToProps = (state) => ({
-  dialogPage: state.dialogPage,
-  isAuth: state.authPart.isAuth
+  dialogPage: state.dialogPage
 })
 const mapDispatchToProps = (dispatch) => ({
   sendMessage: () => {
@@ -14,6 +14,7 @@ const mapDispatchToProps = (dispatch) => ({
     dispatch(updateInputMessageActionCreator(textareaValue));
   }
 })
-const Container = connect(mapStateToProps, mapDispatchToProps)(Page_Items_Dialogs);
+
+const Container = connect(mapStateToProps, mapDispatchToProps)(withAuthRedirect(PageItemsDialogs));
 
 export default Container;
