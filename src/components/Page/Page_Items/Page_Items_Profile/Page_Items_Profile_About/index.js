@@ -1,5 +1,6 @@
 import React from "react";
 import './style.scss'
+import Status from './Status'
 const S = 'Page_Items_Profile_About';
 
 const Page_Items_Profile_About = (props) => {
@@ -8,6 +9,9 @@ const Page_Items_Profile_About = (props) => {
       <div>
         <img src={props.profile.photos.large ? props.profile.photos.large
           : "https://placem.at/people?w=300&h=300&random=1"} alt='largePhoto' />
+      </div>
+      <div>
+        <Status status={'Hello my friends'} />
       </div>
       <div>
         <h1>{`${props.profile.fullName}`}</h1>
