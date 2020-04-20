@@ -18,7 +18,7 @@ class Status extends React.Component {
     this.setState({
       editMode: false
     })
-    this.props.updateStatus(e.target.value)
+    // this.props.updateStatus(e.target.value)
   }
   handleOnChange = (e) => {
     this.setState({
@@ -26,8 +26,34 @@ class Status extends React.Component {
     })
   }
 
+  componentDidUpdate(prevProps, prevState) {
+    if (prevProps.status !== this.props.status) {
+      this.setState({
+        status: this.props.status
+      })
+    }
+    const state = this.state;
+    const props = this.props;
+    console.dir({
+      STATE: { state, prevState },
+      PROPS: { props, prevProps }
+    });
+    /* Example
+    STATE: {
+      state: {editMode: false, status: ""},
+      prevState: {editMode: false, status: ""},
+      __proto__: Object
+    }
+    PROPS:{
+      props: {status: "421412", updateStatus: ƒ},
+      prevProps: {status: "", updateStatus: ƒ},
+      __proto__: Object
+    }
+    */
+  }
 
   render() {
+    console.log('---render');
     return (
       <div className={`${S}`} >
         <span>Status:</span>
