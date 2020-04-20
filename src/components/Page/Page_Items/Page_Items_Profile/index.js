@@ -10,10 +10,11 @@ const Page_Items_Profile = (props) => {
   if (!props.profile) {
     return <Preloader />
   }
+
   return (
     <div className={`${S}`}>
       <h1>Id_{props.profile.userId}</h1>
-      <PageItemsProfileAbout profile={props.profile} />
+      <PageItemsProfileAbout profile={props.profile} status={props.status} updateStatus={props.updateStatus} />
       <PageItemsProfilePosts />
       <PageItemsProfileAddPost />
     </div>

@@ -5,7 +5,8 @@ const S = 'Page_Items_Profile_About_Status';
 class Status extends React.Component {
 
   state = {
-    editMode: false
+    editMode: false,
+    status: this.props.status
   }
 
   handleActivateEditMode = () => {
@@ -13,9 +14,15 @@ class Status extends React.Component {
       editMode: true
     })
   }
-  handleDeactivateEditMode = () => {
+  handleDeactivateEditMode = (e) => {
     this.setState({
       editMode: false
+    })
+    this.props.updateStatus(e.target.value)
+  }
+  handleOnChange = (e) => {
+    this.setState({
+      status: e.target.value
     })
   }
 
@@ -26,12 +33,12 @@ class Status extends React.Component {
         <span>Status:</span>
         {!this.state.editMode &&
           <div className={`${S}_output`} onClick={this.handleActivateEditMode}>
-            <span>{this.props.status}</span>
+            <span>{this.props.status || '------'}</span>
           </div>
         }
         {this.state.editMode &&
           <div className={`${S}_input`}>
-            <input autoFocus={true} value={this.props.status} onBlur={this.handleDeactivateEditMode} />
+            <input autoFocus={true} value={this.state.status} onBlur={this.handleDeactivateEditMode} onChange={this.handleOnChange} />
           </div>
         }
       </div >
