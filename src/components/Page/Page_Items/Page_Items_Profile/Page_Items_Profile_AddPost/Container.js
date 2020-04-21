@@ -1,4 +1,4 @@
-import { sendPostActionCreator, updateInputPostActionCreator } from "../../../../../reducers/reducer_profile";
+import { addPostActionCreator } from "../../../../../reducers/reducer_profile";
 import Page_Items_Profile_AddPost from ".";
 import { connect } from "react-redux"
 
@@ -6,11 +6,8 @@ const mapStateToProps = (state) => ({
   inputValue: state.profile.inputValue
 })
 const mapDispatchToProps = (dispatch) => ({
-  sendPost: () => {
-    dispatch(sendPostActionCreator());
-  },
-  updateInputPost: (textareaValue) => {
-    dispatch(updateInputPostActionCreator(textareaValue));
+  addPost: (newPost) => {
+    dispatch(addPostActionCreator(newPost));
   }
 })
 

@@ -1,12 +1,10 @@
 import { usersAPI, profileAPI } from '../api'
 /* ActionConstant */
-const SEND_POST = 'SEND_POST'
-const UPDATE_INPUT_POST = 'UPDATE_INPUT_POST'
+const ADD_POST = 'ADD_POST'
 const SET_USER_PROFILE = 'SET_USER_PROFILE'
 const SET_STATUS = 'SET_STATUS'
 /* initState for Reducer */
 const initialState = {
-  inputValue: '',
   posts: [
     { id: 0, message: 'it\'s my first most', likes: 511 },
     { id: 1, message: 'how are you', likes: 200 },
@@ -18,24 +16,18 @@ const initialState = {
 /* Reducer */
 const profileReducer = (state = initialState, action) => {
   switch (action.type) {
-    case SEND_POST:
+    case ADD_POST:
       const newPost = {
         id: state.posts.length,
-        message: state.inputValue,
+        message: action.newPost,
         likes: 0
       }
       return {
         ...state,
-        inputValue: '',
         posts: [
           ...state.posts,
           newPost
         ]
-      }
-    case UPDATE_INPUT_POST:
-      return {
-        ...state,
-        inputValue: action.newText
       }
     case SET_USER_PROFILE:
       return {
@@ -52,8 +44,7 @@ const profileReducer = (state = initialState, action) => {
   }
 }
 /* ActionCreator */
-export const sendPostActionCreator = () => ({ type: SEND_POST })
-export const updateInputPostActionCreator = textareaValue => ({ type: UPDATE_INPUT_POST, newText: textareaValue })
+export const addPostActionCreator = (newPost) => ({ type: ADD_POST, newPost })
 export const setUserProfileAction = profile => ({ type: SET_USER_PROFILE, profile })
 export const setStatus = status => ({ type: SET_STATUS, status })
 /* ThunkCreator */

@@ -1,25 +1,29 @@
 import React from "react";
 import './style.scss'
+import { reduxForm, Field } from "redux-form";
 const S = 'Page_Items_Profile_AddPost';
 
 const Page_Items_Profile_AddPost = (props) => {
 
-  const handleClickButton = () => {
-    props.sendPost();
-  }
-
-  const handleChangePost = e => {
-    const textareaValue = e.target.value;
-    props.updateInputPost(textareaValue);
+  const addPost = (values) => {
+    props.addPost(values.textarea);
   }
 
   return (
-    <div className={`${S}`}>
-      <textarea onChange={handleChangePost} placeholder="Write a post..." value={props.inputValue} />
-      <button onClick={handleClickButton}>Add Post</button>
-      {/* <button>Remove Post</button> */}
-    </div>
+    <AddPostFormRedux onSubmit={addPost} />
   )
 }
+
+const AddPostForm = (props) => {
+  return (
+    <form className={`${S}`} onSubmit={props.handleSubmit}>
+      <div>
+        <Field name='textarea' component='textarea' placeholder='Write a post...' />
+      </div>
+      <div><button>Send</button></div>
+    </form>
+  )
+}
+const AddPostFormRedux = reduxForm({ form: 'profileAddPostForm' })(AddPostForm)
 
 export default Page_Items_Profile_AddPost;

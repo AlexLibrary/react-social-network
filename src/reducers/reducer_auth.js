@@ -35,5 +35,26 @@ export const getAuthUserData = () => (dispatch) => {
   });
 
 }
+export const login = (email, password, rememberMe = undefined, captcha = undefined) => (dispatch) => {
+
+  authAPI.login(email, password, rememberMe, captcha).then(data => {
+    console.log('---data(authAPI.login)', data) //
+    // if (res.data.resultCode === 0) {
+    //   dispatch(setAuthUserData(null, null, null));
+    // }
+  });
+
+}
+
+export const logout = () => (dispatch) => {
+
+  authAPI.logout().then(data => {
+    console.log('---data(authAPI.logout)', data)
+    if (data.resultCode === 0) {
+      dispatch(setAuthUserData(null, null, null));
+    }
+  });
+
+}
 
 export default authReducer

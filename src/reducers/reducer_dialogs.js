@@ -1,5 +1,4 @@
 const SEND_MESSAGE = 'SEND_MESSAGE'
-const UPDATE_INPUT_MESSAGE = 'UPDATE_INPUT_MESSAGE'
 
 const initialState = {
   friends: [
@@ -11,7 +10,6 @@ const initialState = {
     { id: 5, name: "Valera" }
   ],
   input: {
-    value: '',
     messages: [
       { id: 0, message: "hi" },
       { id: 1, message: "how are you" },
@@ -27,27 +25,14 @@ const initialState = {
 const dialogsReducer = (state = initialState, action) => {
   switch (action.type) {
     case SEND_MESSAGE:
-      const newMessage = {
-        id: state.input.messages.length,
-        message: state.input.value
-      }
       return {
         ...state,
         input: {
           ...state.input,
-          value: '',
           messages: [
             ...state.input.messages,
-            newMessage
+            { id: state.input.messages.length, message: action.newMessage }
           ]
-        }
-      }
-    case UPDATE_INPUT_MESSAGE:
-      return {
-        ...state,
-        input: {
-          ...state.input,
-          value: action.newText
         }
       }
     default:
@@ -55,12 +40,8 @@ const dialogsReducer = (state = initialState, action) => {
   }
 }
 
-export const sendMessageActionCreator = () => ({
-  type: SEND_MESSAGE
-})
-export const updateInputMessageActionCreator = textareaValue => ({
-  type: UPDATE_INPUT_MESSAGE,
-  newText: textareaValue
+export const sendMessageActionCreator = (newMessage) => ({
+  type: SEND_MESSAGE, newMessage
 })
 
 export default dialogsReducer

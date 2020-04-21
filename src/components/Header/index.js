@@ -4,13 +4,16 @@ import { NavLink } from "react-router-dom";
 const S = 'Header';
 
 const Header = (props) => {
+  const handleLogout = () => {
+    props.logout()
+  }
   return (
     <div className={`${S}`}>
       <img src="./bg-header.jpg" alt="" />
       <div className="container">
         <div className={`${S}__login`}>
           {props.isAuth
-            ? props.login
+            ? <div>{props.login}<span onClick={handleLogout}>LOGOUT</span></div>
             : <NavLink to={'/login'}>Login</NavLink>}
         </div>
       </div>
