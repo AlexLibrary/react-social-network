@@ -1,19 +1,17 @@
 import React from "react";
 import './style.scss'
-import { NavLink } from "react-router-dom";
+import { NavLink, Redirect } from "react-router-dom";
 const S = 'Header';
 
 const Header = (props) => {
-  const handleLogout = () => {
-    props.logout()
-  }
+  if (!props.isAuth) return <Redirect to='/login' />
   return (
     <div className={`${S}`}>
       <img src="./bg-header.jpg" alt="" />
       <div className="container">
         <div className={`${S}__login`}>
           {props.isAuth
-            ? <div>{props.login}<span onClick={handleLogout}>LOGOUT</span></div>
+            ? <div>{props.login}<button onClick={props.logout()}>LOGOUT</button></div>
             : <NavLink to={'/login'}>Login</NavLink>}
         </div>
       </div>
