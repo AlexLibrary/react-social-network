@@ -36,9 +36,8 @@ const LoginForm = (props) => {
     props.login(formData.email, formData.password)
   }
 
-  if (props.isAuth) {
-    return <Redirect to='/profile' />
-  }
+  if (props.isAuth) return <Redirect to='/profile' />
+
 
   return <div className={`${S}`}>
     <h1>LOGIN</h1>
