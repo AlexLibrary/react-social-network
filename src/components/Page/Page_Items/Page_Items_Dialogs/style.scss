@@ -29,26 +29,6 @@
         }
       }
     }
-    &__messages {
-      width: 70%;
-      &__input{
-        display: flex;
-        flex-direction: column;
-        padding-top: 20px;
-        & button {
-          background-color: #999;
-          cursor: pointer;
-          &:hover {
-            background-color: #777;
-          }
-        }
-        & textarea {
-          color: #bbb;
-          padding: 10px;
-          background-color: #222;
-        }
-      }
-    }
   }
 }
 

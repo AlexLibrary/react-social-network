@@ -2,6 +2,8 @@ import React from 'react'
 import './style.scss'
 import { reduxForm, Field } from 'redux-form'
 import { login } from '../../../../reducers/reducer_auth'
+import { Input } from '../../../modules/reduxFormFields'
+import { requiredField } from '../../../../reduxUtils/validators'
 const S = 'Page_Items_Login'
 
 const PageItemsLogin = (props) => {
@@ -9,13 +11,13 @@ const PageItemsLogin = (props) => {
   return (
     <form onSubmit={props.handleSubmit}>
       <div>
-        <Field name={'email'} component={'input'} placeholder={'email...'} />
+        <Field name={'email'} component={Input} placeholder={'email...'} validate={[requiredField]} />
       </div>
       <div>
-        <Field name={'password'} component={'input'} placeholder={'Password...'} />
+        <Field name={'password'} component={Input} placeholder={'Password...'} validate={[requiredField]} />
       </div>
       <div>
-        <Field name={'rememberMe'} component={'input'} type={'checkbox'} /> remember me
+        <Field name={'rememberMe'} component={Input} type={'checkbox'} /> remember me
       </div>
       <div>
         <button>Login</button>

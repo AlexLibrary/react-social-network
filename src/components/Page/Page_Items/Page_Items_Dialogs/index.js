@@ -1,7 +1,7 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import './style.scss'
-import { reduxForm, Field } from 'redux-form'
+import PageItemsDialogsForm from "./Page_Items_Dialogs_Form"
 const S = 'Page_Items_Dialogs';
 
 const Page_Items_Dialogs = (props) => {
@@ -26,23 +26,11 @@ const Page_Items_Dialogs = (props) => {
         </div>
         <div className={`${S}__wrapper__messages`}>
           {messagesElement}
-          <AddMessageFormRedux onSubmit={addNewMessage} />
+          <PageItemsDialogsForm onSubmit={addNewMessage} />
         </div>
       </div>
     </div>
   )
 }
-
-const AddMessageForm = (props) => {
-  return (
-    <form className={`${S}__wrapper__messages__input`} onSubmit={props.handleSubmit}>
-      <div>
-        <Field name='textarea' component='textarea' placeholder='Write a post...' />
-      </div>
-      <div><button>Send</button></div>
-    </form>
-  )
-}
-const AddMessageFormRedux = reduxForm({ form: 'dialogAddMessageForm' })(AddMessageForm)
 
 export default Page_Items_Dialogs;
