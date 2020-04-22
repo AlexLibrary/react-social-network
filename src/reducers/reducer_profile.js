@@ -48,7 +48,7 @@ export const addPostActionCreator = (newPost) => ({ type: ADD_POST, newPost })
 export const setUserProfileAction = profile => ({ type: SET_USER_PROFILE, profile })
 export const setStatus = status => ({ type: SET_STATUS, status })
 /* ThunkCreator */
-export const getUserProfile = (userId = 7174) => (dispatch) => {
+export const getUserProfile = (userId) => (dispatch) => {
 
   usersAPI.getProfile(userId).then(data => {
     console.log('---data(usersAPI.getProfile)', data)
@@ -56,7 +56,7 @@ export const getUserProfile = (userId = 7174) => (dispatch) => {
   });
 
 }
-export const getStatus = (userId = 7174) => (dispatch) => {
+export const getStatus = (userId) => (dispatch) => {
 
   profileAPI.getStatus(userId).then(data => {
     console.log('---data(profileAPI.getStatus)', data)

@@ -12,5 +12,13 @@
   input {
     border: 1px solid black;
   }
+  &__rememberMe {
+    display: flex;
+  }
+  &__summaryError {
+    // border: 1px solid #eee;
+    padding: 5px;
+    color: red;
+  }
 }
 

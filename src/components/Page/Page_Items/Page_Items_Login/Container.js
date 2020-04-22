@@ -18,8 +18,11 @@ const PageItemsLogin = (props) => {
       <div>
         <Field name={'password'} component={Input} placeholder={'Password...'} validate={[requiredField]} type='password' />
       </div>
-      <div>
+      <div className={`${S}__rememberMe`}>
         <Field name={'rememberMe'} component={Input} type={'checkbox'} /> remember me
+      </div>
+      <div className={`${S}__summaryError`}>
+        {props.error && props.error}
       </div>
       <div>
         <button>Login</button>

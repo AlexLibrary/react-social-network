@@ -14,7 +14,7 @@ export const usersAPI = {
     const { data } = await instance.get(`users?page=${currentPage}&count=${pageSize}`);
     return data;
   },
-  getProfile(userId = 7174) {
+  getProfile(userId) {
     console.warn('Obsolete method. Please profileAPI object!')
     return profileAPI.getProfile(userId);
   },
@@ -33,7 +33,7 @@ export const usersAPI = {
 }
 
 export const profileAPI = {
-  async getProfile(userId = 7174) {
+  async getProfile(userId) {
     const { data } = await instance.get(`profile/${userId}`);
     return data;
   },
