@@ -19,6 +19,7 @@ class UsersContainer extends React.Component {
   }
 
   render() {
+    console.log('render');
     return <>
       {this.props.isFetching ? <Preloader /> : null}
       <PageItemsUsers
@@ -35,42 +36,19 @@ class UsersContainer extends React.Component {
   }
 }
 
-// const mapStateToProps = (state) => ({
-//   users: state.usersPage.users,
-//   pageSize: state.usersPage.pageSize,
-//   totalUsersCount: state.usersPage.totalUsersCount,
-//   currentPage: state.usersPage.currentPage,
-//   isFetching: state.usersPage.isFetching,
-//   followingInProgress: state.usersPage.followingInProgress
-// })
 
-const mapStateToProps = (state) => ({
-  users: getUsers(state),
-  pageSize: getPageSize(state),
-  totalUsersCount: getTotalUsersCount(state),
-  currentPage: getCurrentPage(state),
-  isFetching: getIsFetching(state),
-  followingInProgress: getFollowingInProgress(state)
-})
+const mapStateToProps = (state) => {
+  console.log('mapStateToProps');
 
-/* export const getUsers = (state) => {
-  return state.usersPage.users;
+  return ({
+    users: getUsers(state),
+    pageSize: getPageSize(state),
+    totalUsersCount: getTotalUsersCount(state),
+    currentPage: getCurrentPage(state),
+    isFetching: getIsFetching(state),
+    followingInProgress: getFollowingInProgress(state)
+  })
 }
-export const getPageSize = (state) => {
-  return state.usersPage.pageSize;
-}
-export const getTotalUsersCount = (state) => {
-  return state.usersPage.totalUsersCount;
-}
-export const getCurrentPage = (state) => {
-  return state.usersPage.currentPage;
-}
-export const getIsFetching = (state) => {
-  return state.usersPage.isFetching;
-}
-export const getFollowingInProgress = (state) => {
-  return state.usersPage.followingInProgress;
-} */
 
 export default compose(
   connect(mapStateToProps, {
