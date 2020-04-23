@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 // import './style.scss'
 const S = 'Page_Items_Profile_About_Status';
 
@@ -7,6 +7,10 @@ const StatusWithHooks = (props) => {
 
   const [editMode, setEditMode] = useState(false);
   const [status, setStatus] = useState(props.status);
+
+  useEffect(() => {
+    setStatus(props.status)
+  }, [props.status]);
 
   const activateEditMode = () => {
     setEditMode(true)
