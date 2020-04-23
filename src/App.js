@@ -1,21 +1,35 @@
 import React from "react";
-import { BrowserRouter } from "react-router-dom"
 import HeaderContainer from "./components/Header/Container";
 import Page from "./components/Page";
 import Footer from "./components/Footer";
 import './App.scss'
+import { initializeApp } from "./reducers/reducer_app";
+import { connect } from "react-redux";
+import Preloader from "./components/modules/Preloader";
 const S = 'App';
 
-const App = () => {
-  return (
-    <BrowserRouter>
+class App extends React.Component {
+  componentDidMount() {
+    this.props.initializeApp()
+  }
+  render() {
+
+    if (!this.props.initialized) {
+      return <Preloader />
+    }
+
+    return (
       <div className={`${S}`}>
         <HeaderContainer />
         <Page />
         <Footer />
       </div>
-    </BrowserRouter>
-  )
+    )
+  }
 }
 
-export default App;
+const mapStateToProps = (state) => ({
+  initialized: state.app.initialized
+})
+
+export default connect(mapStateToProps, { initializeApp })(App);
