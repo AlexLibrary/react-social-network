@@ -1,6 +1,6 @@
 import React from "react";
 import './style.scss'
-import Status from './Status'
+import Status from './StatusWithHooks'
 const S = 'Page_Items_Profile_About';
 
 const Page_Items_Profile_About = (props) => {
