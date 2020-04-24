@@ -11,6 +11,4 @@ const mapDispatchToProps = (dispatch) => ({
   }
 })
 
-const CONT_Page_Items_Profile_AddPost = connect(mapStateToProps, mapDispatchToProps)(Page_Items_Profile_AddPost);
-
-export default CONT_Page_Items_Profile_AddPost;
+export default connect(mapStateToProps, mapDispatchToProps)(Page_Items_Profile_AddPost);;
