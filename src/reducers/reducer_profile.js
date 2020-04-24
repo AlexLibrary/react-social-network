@@ -55,31 +55,23 @@ export const setUserProfileAction = (profile) => ({ type: SET_USER_PROFILE, prof
 export const setStatus = (status) => ({ type: SET_STATUS, status })
 export const deletePost = (postId) => ({ type: DELETE_POST, postId })
 /* ThunkCreator */
-export const getUserProfile = (userId) => (dispatch) => {
-
-  usersAPI.getProfile(userId).then(data => {
-    console.log('---data(usersAPI.getProfile)', data)
-    dispatch(setUserProfileAction(data))
-  });
-
+export const getUserProfile = (userId) => async (dispatch) => {
+  const { data } = await usersAPI.getProfile(userId)
+  console.log('---data(usersAPI.getProfile)', data)
+  dispatch(setUserProfileAction(data))
 }
-export const getStatus = (userId) => (dispatch) => {
 
-  profileAPI.getStatus(userId).then(data => {
-    console.log('---data(profileAPI.getStatus)', data)
-    dispatch(setStatus(data))
-  });
-
+export const getStatus = (userId) => async (dispatch) => {
+  const { data } = await profileAPI.getStatus(userId)
+  console.log('---data(profileAPI.getStatus)', data)
+  dispatch(setStatus(data))
 }
-export const updateStatus = (status) => (dispatch) => {
-
-  profileAPI.updateStatus(status).then(response => {
-    console.log('---data(profileAPI.updateStatus)', response)
-    if (response.data.resultCode === 0) {
-      dispatch(setStatus(status))
-    }
-  });
-
+export const updateStatus = (status) => async (dispatch) => {
+  const { data } = await profileAPI.updateStatus(status)
+  console.log('---data(profileAPI.updateStatus)', data)
+  if (data.resultCode === 0) {
+    dispatch(setStatus(status))
+  }
 }
 
 export default profileReducer

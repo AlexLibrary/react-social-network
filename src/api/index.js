@@ -10,21 +10,18 @@ const instance = axios.create({
 });
 
 export const usersAPI = {
-  async getUsers(currentPage = 1, pageSize = 10) {
-    const { data } = await instance.get(`users?page=${currentPage}&count=${pageSize}`);
-    return data;
+  getUsers(currentPage = 1, pageSize = 10) {
+    return instance.get(`users?page=${currentPage}&count=${pageSize}`);
   },
   getProfile(userId) {
     console.warn('Obsolete method. Please profileAPI object!')
     return profileAPI.getProfile(userId);
   },
-  async unfollow(userId) {
-    const { data } = await instance.delete(`follow/${userId}`);
-    return data;
+  unfollow(userId) {
+    return instance.delete(`follow/${userId}`);
   },
-  async follow(userId) {
-    const { data } = await instance.post(`follow/${userId}`);
-    return data;
+  follow(userId) {
+    return instance.post(`follow/${userId}`);
   },
   // follow(userId) {
   //   return instance.post(`follow/${userId}`)
@@ -33,34 +30,25 @@ export const usersAPI = {
 }
 
 export const profileAPI = {
-  async getProfile(userId) {
-    const { data } = await instance.get(`profile/${userId}`);
-    return data;
+  getProfile(userId) {
+    return instance.get(`profile/${userId}`);
   },
-  async getStatus(userId) {
-    const { data } = await instance.get(`profile/status/${userId}`);
-    return data;
+  getStatus(userId) {
+    return instance.get(`profile/status/${userId}`);
   },
-  async updateStatus(status) {
-
-    const response = await instance.put(`profile/status`, { status });
-    if (response.data.resultCode === 0) {
-      return response;
-    }
+  updateStatus(status) {
+    return instance.put(`profile/status`, { status });
   }
 }
 
 export const authAPI = {
-  async me() {
-    const { data } = await instance.get(`auth/me`);
-    return data;
+  me() {
+    return instance.get(`auth/me`);
   },
-  async login(email, password, rememberMe, captcha) {
-    const { data } = await instance.post(`auth/login`, { email, password, rememberMe, captcha }); //captcha
-    return data;
+  login(email, password, rememberMe, captcha) {
+    return instance.post(`auth/login`, { email, password, rememberMe, captcha });
   },
-  async logout() {
-    const { data } = await instance.delete(`auth/login`);
-    return data;
+  logout() {
+    return instance.delete(`auth/login`);
   },
 }
