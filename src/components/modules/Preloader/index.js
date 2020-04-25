@@ -1,11 +1,10 @@
 import React from 'react'
 import preloaderAnimation from '../../../assets/preloaderAnimation.svg'
-import './style.scss'
-const S = 'Preloader'
+import styles from './style.module.scss'
 
 const Preloader = () => {
   return (
-    <div className={`${S}`}>
+    <div className={styles.preloader}>
       <img src={preloaderAnimation} alt="loading..." />
     </div>
   )

@@ -1,5 +1,5 @@
 import { usersAPI } from '../api'
-import { updateObjectInArrays } from '../reduxUtils/objectHelpers'
+import { updateObjectInArrays } from '../utils/objectHelpers'
 /* ActionConstant */
 const SET_USERS = 'SET_USERS'
 const FOLLOW = 'FOLLOW'
@@ -28,18 +28,12 @@ const usersReducer = (state = initialState, action) => {
     case FOLLOW:
       return {
         ...state,
-        users: state.users.map(user =>
-          user.id === action.id ? { ...user, followed: true } : user
-        )
-        //users: updateObjectInArrays(state.users, action.id, 'id', { followed: true })
+        users: updateObjectInArrays(state.users, action.id, 'id', { followed: true })
       };
     case UNFOLLOW:
       return {
         ...state,
-        users: state.users.map(user =>
-          user.id === action.id ? { ...user, followed: false } : user
-        )
-        //users: updateObjectInArrays(state.users, action.id, 'id', { followed: false })
+        users: updateObjectInArrays(state.users, action.id, 'id', { followed: false })
       };
     case SET_CURRENT_PAGE:
       return {

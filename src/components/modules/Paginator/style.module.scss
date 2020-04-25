@@ -1,0 +1,11 @@
+.pages{
+  margin-bottom: 10px;
+  .page {
+    margin-right: 10px;
+    color: #222;
+    cursor: pointer;
+    &_active {
+      font-weight: 700;
+    }
+  }
+}

@@ -1,12 +1,11 @@
 import React from 'react'
-import './style.scss'
+import styles from './style.module.scss'
 import { Field } from 'redux-form';
-const S = 'reduxFormFields'
 
 export const Textarea = ({ input, meta: { touched, error }, ...props }) => {
   const hasError = touched && error;
   return (
-    <div className={hasError ? `${S} error` : `${S}`}>
+    <div className={hasError ? `${styles.reduxFormFields} ${styles.error}` : styles.reduxFormFields}>
       <div>
         <textarea {...input} {...props} />
       </div>
@@ -17,7 +16,7 @@ export const Textarea = ({ input, meta: { touched, error }, ...props }) => {
 export const Input = ({ input, meta: { touched, error }, ...props }) => {
   const hasError = touched && error;
   return (
-    <div className={hasError ? `${S} error` : `${S}`}>
+    <div className={hasError ? `${styles.reduxFormFields} ${styles.error}` : styles.reduxFormFields}>
       <div>
         <input {...input} {...props} />
       </div>
@@ -26,8 +25,8 @@ export const Input = ({ input, meta: { touched, error }, ...props }) => {
   )
 }
 
-export const createField = (name, component, placeholder, validators = [], props = {}, text = "") => (
-  <div>
+export const createField = (name, component, placeholder, validators = [], props = {}, text = "", className = "") => (
+  <div className={className}>
     <Field
       name={name}
       component={component}

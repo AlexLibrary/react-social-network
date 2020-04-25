@@ -1,15 +1,12 @@
 import React from "react";
-import './style.scss'
-// import FooterWrapper from "./Footer_Wrapper";
-import FooterAnotation from './Footer_Anotation'
-const S = 'Footer';
+import styles from './style.module.scss'
+import Anotation from './Anotation'
 
 const Footer = () => {
   return (
-    <div className={`${S}`}>
+    <div className={styles.footer}>
       <div className='container'>
-        <FooterAnotation />
-        {/* <FooterWrapper /> */}
+        <Anotation />
       </div>
     </div>
   )

@@ -1,17 +1,16 @@
 import React from "react";
-import './style.scss'
+import styles from './style.module.scss'
 import { NavLink } from "react-router-dom";
-const S = 'Header';
 
 const Header = (props) => {
   // if (!props.isAuth) return <Redirect to='/login' />
   return (
-    <div className={`${S}`}>
+    <div className={styles.header}>
       <img src="./bg-header.jpg" alt="" />
       <div className="container">
-        <div className={`${S}__login`}>
+        <div className={styles.header_login}>
           {props.isAuth
-            ? <div>{props.login}<button onClick={props.logout}>LOGOUT</button></div>
+            ? <div>{props.login}<br /><button onClick={props.logout}>LOGOUT</button></div>
             : <NavLink to={'/login'}>Login</NavLink>}
         </div>
       </div>

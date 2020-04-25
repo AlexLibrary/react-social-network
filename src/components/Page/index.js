@@ -1,14 +1,13 @@
-import PageSidebar from "./Page_Sidebar";
-import PageItems from "./Page_Items";
+import Sidebar from "./Sidebar";
+import Main from "./Main";
 import React from "react";
-import './style.scss'
-const S = 'Page';
+import styles from './style.module.scss'
 
 const Page = () => {
   return (
-    <div className={`${S}`}>
-      <PageSidebar />
-      <PageItems />
+    <div className={styles.page}>
+      <Sidebar />
+      <Main />
     </div>
   )
 }
