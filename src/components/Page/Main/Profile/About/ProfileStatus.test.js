@@ -18,7 +18,7 @@ describe("ProfileStatus component", () => {
     const component = create(<ProfileStatus status="Samuraiii" />);
     const root = component.root;
     expect(() => {
-      const input = root.findByType("input")
+      return root.findByType("input")
     }).toThrow();
   });
   test('After creation <span> with status should be displayed with correct status', () => {
