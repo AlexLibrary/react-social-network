@@ -1,23 +1,23 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "e7ea70fd0a54c4bbdd9c6382c90d9d16",
+    "revision": "5a4c880154965bb80127014e4566f580",
     "url": "./index.html"
   },
   {
-    "revision": "79c2f6a5298f57713d5d",
+    "revision": "be2bdddcc6159ed0992b",
     "url": "./static/css/main.7454b403.chunk.css"
   },
   {
-    "revision": "014efc78820b480e3da0",
-    "url": "./static/js/2.69df0719.chunk.js"
+    "revision": "6ceaca2523651090618e",
+    "url": "./static/js/2.147fea69.chunk.js"
   },
   {
     "revision": "c64c486544348f10a6d6c716950bc223",
-    "url": "./static/js/2.69df0719.chunk.js.LICENSE.txt"
+    "url": "./static/js/2.147fea69.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "79c2f6a5298f57713d5d",
-    "url": "./static/js/main.35c4951e.chunk.js"
+    "revision": "be2bdddcc6159ed0992b",
+    "url": "./static/js/main.3d0dc6d8.chunk.js"
   },
   {
     "revision": "f2b27e2fa1739d07b049",
@@ -62,6 +62,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "ee6539921d713482b8ccd4d0d23961bb",
     "url": "./static/media/Montserrat-Regular.ee653992.ttf"
+  },
+  {
+    "revision": "bee36bb775304128ae2e20fcb30e4772",
+    "url": "./static/media/bg-header.bee36bb7.jpg"
   },
   {
     "revision": "f4e1fcb287990f61340d4210a82fa07b",
