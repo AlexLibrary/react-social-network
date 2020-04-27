@@ -14,11 +14,11 @@ class Status extends React.Component {
       editMode: true
     })
   }
-  handleDeactivateEditMode = (e) => {
+  handleDeactivateEditMode = () => {
     this.setState({
       editMode: false
     })
-    // this.props.updateStatus(e.target.value)
+    this.props.updateStatus(this.state.status)
   }
   handleOnChange = (e) => {
     this.setState({
@@ -39,16 +39,16 @@ class Status extends React.Component {
       PROPS: { props, prevProps }
     });
     /* Example
-    STATE: {
-      state: {editMode: false, status: ""},
-      prevState: {editMode: false, status: ""},
-      __proto__: Object
-    }
-    PROPS:{
-      props: {status: "421412", updateStatus: ƒ},
-      prevProps: {status: "", updateStatus: ƒ},
-      __proto__: Object
-    }
+      STATE: {
+        state: {editMode: false, status: ""},
+        prevState: {editMode: false, status: ""},
+        __proto__: Object
+      }
+      PROPS:{
+        props: {status: "421412", updateStatus: ƒ},
+        prevProps: {status: "", updateStatus: ƒ},
+        __proto__: Object
+      }
     */
   }
 
@@ -56,9 +56,9 @@ class Status extends React.Component {
     // console.log('---render');
     return (
       <div className={`${S}`} >
-        <span>Status:</span>
+        <div>Status:</div>
         {!this.state.editMode &&
-          <div className={`${S}_output`} onClick={this.handleActivateEditMode}>
+          <div className={`${S}_output`} onClick={this.handleActivateEditMode} >
             <span>{this.props.status || '------'}</span>
           </div>
         }

@@ -1,4 +1,4 @@
-import { combineReducers, createStore, applyMiddleware } from 'redux';
+import { combineReducers, createStore, applyMiddleware, compose } from 'redux';
 import ThunkMiddleware from 'redux-thunk'
 import profileReducer from "./reducers/reducer_profile";
 import dialogsReducer from "./reducers/reducer_dialogs";
@@ -6,7 +6,7 @@ import sidebarReducer from "./reducers/reducer_sidebar";
 import usersReducer from './reducers/reducer_users';
 import authReducer from './reducers/reducer_auth';
 import appReducer from './reducers/reducer_app';
-import { reducer as formReducer } from 'redux-form';
+import { reducer as formReducer, } from 'redux-form';
 
 const reducers = combineReducers({
   profile: profileReducer,
@@ -18,7 +18,12 @@ const reducers = combineReducers({
   app: appReducer
 });
 
-const store = createStore(reducers, applyMiddleware(ThunkMiddleware));
+
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+const store = createStore(reducers, /* preloadedState, */ composeEnhancers(
+  applyMiddleware(ThunkMiddleware)
+));
+// const store = createStore(reducers, applyMiddleware(ThunkMiddleware));
 export default store;
 
 /* Window */
@@ -27,4 +32,4 @@ export default store;
 //   interface Window { store: any; }
 // }
 
-window.store = store;
+window.__store__ = store;

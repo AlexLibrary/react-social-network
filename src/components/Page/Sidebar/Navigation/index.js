@@ -14,7 +14,7 @@ const links = [
 const Menu = () => {
   const NavLinks = () => (
     links.map((link, i) => {
-      return <NavLink key={i} activeClassName={styles.a_active} to={link.toLowerCase()}>{link}</NavLink>
+      return <NavLink key={i} activeClassName={styles.a_active} to={`/${link.toLowerCase()}`}>{link}</NavLink>
     })
   )
   return (

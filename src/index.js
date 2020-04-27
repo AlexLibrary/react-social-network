@@ -1,21 +1,11 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import './index.scss';
-import store from "./redux_store"
-import App from './App'
-import { Provider } from "react-redux";
+import SamuraiJSApp from './App'
 import * as serviceWorker from './serviceWorker';
-import { BrowserRouter } from "react-router-dom";
 
 const Render = () => {
-  ReactDOM.render(
-    <BrowserRouter basename="/build">
-      <Provider store={store}>
-        <App />
-      </Provider>
-    </BrowserRouter>,
-    document.querySelector('.root')
-  );
+  ReactDOM.render(<SamuraiJSApp />, document.querySelector('.root'));
 }
 
 Render();

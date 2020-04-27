@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import styles from './style.module.scss'
 
-const StatusWithHooks = (props) => {
+const ProfileStatusWithHooks = (props) => {
 
   const [editMode, setEditMode] = useState(false);
   const [status, setStatus] = useState(props.status);
@@ -40,4 +40,4 @@ const StatusWithHooks = (props) => {
 
 }
 
-export default StatusWithHooks;
+export default ProfileStatusWithHooks;

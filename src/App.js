@@ -4,8 +4,10 @@ import Page from "./components/Page";
 import Footer from "./components/Footer";
 import './App.scss'
 import { initializeApp } from "./reducers/reducer_app";
-import { connect } from "react-redux";
+import { connect, Provider } from "react-redux";
 import Preloader from "./components/modules/Preloader";
+import { BrowserRouter } from "react-router-dom";
+import store from "./redux_store";
 const S = 'App';
 
 class App extends React.Component {
@@ -19,6 +21,7 @@ class App extends React.Component {
     }
 
     return (
+
       <div className={`${S}`}>
         <HeaderContainer />
         <Page />
@@ -32,4 +35,15 @@ const mapStateToProps = (state) => ({
   initialized: state.app.initialized
 })
 
-export default connect(mapStateToProps, { initializeApp })(App);
+const AppContainer = connect(mapStateToProps, { initializeApp })(App);
+
+
+const SamuraiJSApp = () => (
+  <BrowserRouter basename="/build">
+    <Provider store={store}>
+      <AppContainer />
+    </Provider>
+  </BrowserRouter>
+)
+
+export default SamuraiJSApp;

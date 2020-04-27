@@ -1,6 +1,6 @@
 import React from "react";
 import styles from './style.module.scss'
-import Status from './StatusWithHooks'
+import ProfileStatus from './ProfileStatusWithHooks'
 
 const About = ({ profile, ...props }) => {
 
@@ -11,7 +11,7 @@ const About = ({ profile, ...props }) => {
           : "https://placem.at/people?w=300&h=300&random=1"} alt='largePhoto' />
       </div>
       <div>
-        <Status status={props.status} updateStatus={props.updateStatus} />
+        <ProfileStatus status={props.status} updateStatus={props.updateStatus} />
       </div>
       <div>
         <h1>{`${profile.fullName}`}</h1>
