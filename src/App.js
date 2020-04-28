@@ -6,7 +6,7 @@ import './App.scss'
 import { initializeApp } from "./reducers/reducer_app";
 import { connect, Provider } from "react-redux";
 import Preloader from "./components/modules/Preloader";
-import { BrowserRouter } from "react-router-dom";
+import { HashRouter } from "react-router-dom";
 import store from "./redux_store";
 const S = 'App';
 
@@ -37,13 +37,13 @@ const mapStateToProps = (state) => ({
 
 const AppContainer = connect(mapStateToProps, { initializeApp })(App);
 
-
+/* HashRouter <= BrowserRouter (for GitHub pages) */
 const SamuraiJSApp = () => (
-  <BrowserRouter basename={process.env.PUBLIC_URL}>
+  <HashRouter basename={process.env.PUBLIC_URL}>
     <Provider store={store}>
       <AppContainer />
     </Provider>
-  </BrowserRouter>
+  </HashRouter>
 )
 
 export default SamuraiJSApp;
