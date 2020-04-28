@@ -37,9 +37,9 @@ const mapStateToProps = (state) => ({
 
 const AppContainer = connect(mapStateToProps, { initializeApp })(App);
 
-/* HashRouter <= BrowserRouter (for GitHub pages) */
+/* <HashRouter> / <BrowserRouter basename={process.env.PUBLIC_URL}> (for GitHub pages) */
 const SamuraiJSApp = () => (
-  <HashRouter basename={process.env.PUBLIC_URL}>
+  <HashRouter >
     <Provider store={store}>
       <AppContainer />
     </Provider>
