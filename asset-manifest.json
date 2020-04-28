@@ -1,0 +1,43 @@
+{
+  "files": {
+    "static/js/0.661e09f9.chunk.js": "/AlexLibrary/react-social-network/static/js/0.661e09f9.chunk.js",
+    "static/js/0.661e09f9.chunk.js.map": "/AlexLibrary/react-social-network/static/js/0.661e09f9.chunk.js.map",
+    "main.css": "/AlexLibrary/react-social-network/static/css/main.014baf61.chunk.css",
+    "main.js": "/AlexLibrary/react-social-network/static/js/main.38faaf12.chunk.js",
+    "main.js.map": "/AlexLibrary/react-social-network/static/js/main.38faaf12.chunk.js.map",
+    "runtime-main.js": "/AlexLibrary/react-social-network/static/js/runtime-main.eee82680.js",
+    "runtime-main.js.map": "/AlexLibrary/react-social-network/static/js/runtime-main.eee82680.js.map",
+    "static/js/3.0ef2a02d.chunk.js": "/AlexLibrary/react-social-network/static/js/3.0ef2a02d.chunk.js",
+    "static/js/3.0ef2a02d.chunk.js.map": "/AlexLibrary/react-social-network/static/js/3.0ef2a02d.chunk.js.map",
+    "static/css/4.497c28c5.chunk.css": "/AlexLibrary/react-social-network/static/css/4.497c28c5.chunk.css",
+    "static/js/4.110b775c.chunk.js": "/AlexLibrary/react-social-network/static/js/4.110b775c.chunk.js",
+    "static/js/4.110b775c.chunk.js.map": "/AlexLibrary/react-social-network/static/js/4.110b775c.chunk.js.map",
+    "static/css/5.6dd1742b.chunk.css": "/AlexLibrary/react-social-network/static/css/5.6dd1742b.chunk.css",
+    "static/js/5.777dc290.chunk.js": "/AlexLibrary/react-social-network/static/js/5.777dc290.chunk.js",
+    "static/js/5.777dc290.chunk.js.map": "/AlexLibrary/react-social-network/static/js/5.777dc290.chunk.js.map",
+    "static/css/6.0a0f00a6.chunk.css": "/AlexLibrary/react-social-network/static/css/6.0a0f00a6.chunk.css",
+    "static/js/6.83e79710.chunk.js": "/AlexLibrary/react-social-network/static/js/6.83e79710.chunk.js",
+    "static/js/6.83e79710.chunk.js.map": "/AlexLibrary/react-social-network/static/js/6.83e79710.chunk.js.map",
+    "static/css/7.16e05694.chunk.css": "/AlexLibrary/react-social-network/static/css/7.16e05694.chunk.css",
+    "static/js/7.535b551b.chunk.js": "/AlexLibrary/react-social-network/static/js/7.535b551b.chunk.js",
+    "static/js/7.535b551b.chunk.js.map": "/AlexLibrary/react-social-network/static/js/7.535b551b.chunk.js.map",
+    "index.html": "/AlexLibrary/react-social-network/index.html",
+    "precache-manifest.5d13ae038ec1cab9a4442aae243ab997.js": "/AlexLibrary/react-social-network/precache-manifest.5d13ae038ec1cab9a4442aae243ab997.js",
+    "service-worker.js": "/AlexLibrary/react-social-network/service-worker.js",
+    "static/css/4.497c28c5.chunk.css.map": "/AlexLibrary/react-social-network/static/css/4.497c28c5.chunk.css.map",
+    "static/css/5.6dd1742b.chunk.css.map": "/AlexLibrary/react-social-network/static/css/5.6dd1742b.chunk.css.map",
+    "static/css/6.0a0f00a6.chunk.css.map": "/AlexLibrary/react-social-network/static/css/6.0a0f00a6.chunk.css.map",
+    "static/css/7.16e05694.chunk.css.map": "/AlexLibrary/react-social-network/static/css/7.16e05694.chunk.css.map",
+    "static/css/main.014baf61.chunk.css.map": "/AlexLibrary/react-social-network/static/css/main.014baf61.chunk.css.map",
+    "static/js/3.0ef2a02d.chunk.js.LICENSE.txt": "/AlexLibrary/react-social-network/static/js/3.0ef2a02d.chunk.js.LICENSE.txt",
+    "static/media/index.scss": "/AlexLibrary/react-social-network/static/media/Montserrat-Regular.ee653992.ttf",
+    "static/media/bg-header.jpg": "/AlexLibrary/react-social-network/static/media/bg-header.bee36bb7.jpg",
+    "static/media/preloaderAnimation.svg": "/AlexLibrary/react-social-network/static/media/preloaderAnimation.f4e1fcb2.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.eee82680.js",
+    "static/js/3.0ef2a02d.chunk.js",
+    "static/css/main.014baf61.chunk.css",
+    "static/js/main.38faaf12.chunk.js"
+  ]
+}
