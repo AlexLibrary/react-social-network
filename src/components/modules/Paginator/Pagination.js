@@ -1,12 +1,19 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styles from './style.module.scss'
 
-const Paginator = ({ totalUsersCount, pageSize, switchToAnotherPage, currentPage }) => {
+const Paginator = ({ totalItemsCount, pageSize, switchToAnotherPage, currentPage, portionSize }) => {
+  const [portionNumber, setPortionNumber] = useState(1)
+  const totalPages = Math.ceil(totalItemsCount / pageSize)
+
+  const portionCount = Math.ceil(totalPages / portionSize)
+  const leftPortionPageNumber = (portionNumber - 1) * portionSize + 1
+  const rightPortionPageNumber = portionNumber * portionSize
+
   const createNumbers = () => {
     const numbers = []
-    const totalPages = Math.ceil(totalUsersCount / pageSize)
     for (let i = 1; i <= totalPages; i++) {
-      numbers.push(NumberSpan(i))
+      if (i >= leftPortionPageNumber && i <= rightPortionPageNumber)
+        numbers.push(NumberSpan(i))
     }
     return numbers
   }
@@ -16,14 +23,26 @@ const Paginator = ({ totalUsersCount, pageSize, switchToAnotherPage, currentPage
       key={number}
       onClick={() => switchToAnotherPage(number)}
       className={
-        currentPage === number ? `${styles.page} ${styles.page_active}` : styles.page
+        currentPage === number ? `${styles.number} ${styles.number_active}` : styles.number
       }
     >{number}</span>
   )
 
   return (
-    <div className={styles.pages}>
+    <div className={styles.numbers}>
+      {
+        portionNumber > 1 &&
+        <button onClick={() => { setPortionNumber(portionNumber - 1) }}>
+          {'<'}
+        </button>
+      }
       {createNumbers()}
+      {
+        portionCount > portionNumber &&
+        <button onClick={() => { setPortionNumber(portionNumber + 1) }}>
+          {'>'}
+        </button>
+      }
     </div>
   )
 }

@@ -1,11 +1,31 @@
-.pages{
+$size: 30px;
+
+.numbers{
+  display: flex;
+  justify-content: center;
   margin-bottom: 10px;
-  .page {
-    margin-right: 10px;
+  .number {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     color: #222;
+    width: $size;
+    height: $size;
+    border: 1px solid #eee;
     cursor: pointer;
     &_active {
       font-weight: 700;
     }
+    &:hover {
+      background-color: #eee;
+    }
+  }
+  button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: $size;
+    height: $size;
+    line-height: 0;
   }
 }

@@ -8,10 +8,11 @@ const Users = (props) => {
   return (
     <div className={styles.users}>
       <Paginator
-        totalUsersCount={props.totalUsersCount}
+        totalItemsCount={props.totalUsersCount}
         pageSize={props.pageSize}
         switchToAnotherPage={props.switchToAnotherPage}
         currentPage={props.currentPage}
+        portionSize={3}
       />
       {props.users.map(user =>
         <User
@@ -22,6 +23,13 @@ const Users = (props) => {
           follow={props.follow}
         />
       )}
+      <Paginator
+        totalItemsCount={props.totalUsersCount}
+        pageSize={props.pageSize}
+        switchToAnotherPage={props.switchToAnotherPage}
+        currentPage={props.currentPage}
+        portionSize={3}
+      />
     </div>
   )
 }

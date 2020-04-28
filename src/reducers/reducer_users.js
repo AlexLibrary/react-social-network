@@ -11,7 +11,7 @@ const TOGGLE_FOLLOWING_IN_PROGRESS = 'TOGGLE_FOLLOWING_IN_PROGRESS'
 /* initState for Reducer */
 const initialState = {
   users: [],
-  pageSize: 100,
+  pageSize: 20,
   totalUsersCount: 0,
   currentPage: 1,
   isFetching: false,
