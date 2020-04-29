@@ -31,5 +31,11 @@
       }
     }
   }
+  .editProfile{
+    &_summaryError{
+      padding: 5px;
+      color: red;
+    }
+  }
 }
 
