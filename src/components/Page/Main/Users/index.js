@@ -12,7 +12,7 @@ const Users = (props) => {
         pageSize={props.pageSize}
         switchToAnotherPage={props.switchToAnotherPage}
         currentPage={props.currentPage}
-        portionSize={3}
+        portionSize={15}
       />
       {props.users.map(user =>
         <User
@@ -28,7 +28,7 @@ const Users = (props) => {
         pageSize={props.pageSize}
         switchToAnotherPage={props.switchToAnotherPage}
         currentPage={props.currentPage}
-        portionSize={3}
+        portionSize={15}
       />
     </div>
   )

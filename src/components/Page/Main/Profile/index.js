@@ -14,9 +14,11 @@ const Profile = (props) => {
     <div className={styles.profile}>
       <h1>Id_{props.profile.userId}</h1>
       <About
+        isOwner={props.isOwner}
         profile={props.profile}
         status={props.status}
         updateStatus={props.updateStatus}
+        savePhoto={props.savePhoto}
       />
       <Posts />
       <AddPost />
