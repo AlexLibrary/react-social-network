@@ -1,5 +1,6 @@
 import { usersAPI, profileAPI } from '../api'
 import { stopSubmit } from 'redux-form'
+import { setGlobalError } from './reducer_app'
 /* ActionConstant */
 const ADD_POST = 'reducer_profile/ADD_POST'
 const SET_USER_PROFILE = 'reducer_profile/SET_USER_PROFILE'
@@ -75,11 +76,16 @@ export const getStatus = (userId) => async (dispatch) => {
   dispatch(setStatus(data))
 }
 export const updateStatus = (status) => async (dispatch) => {
+
   const { data } = await profileAPI.updateStatus(status)
   console.log('---data(profileAPI.updateStatus)', data)
   if (data.resultCode === 0) {
     dispatch(setStatus(status))
+  } else {
+    dispatch(setGlobalError(data.messages[0]))
+    setTimeout(() => { dispatch(setGlobalError(null)) }, 4000);
   }
+
 }
 export const savePhoto = (file) => async (dispatch) => {
   const { data } = await profileAPI.savePhoto(file)

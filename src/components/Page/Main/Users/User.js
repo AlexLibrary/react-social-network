@@ -31,10 +31,10 @@ const User = ({ user, followingInProgress, unfollow, follow }) => {
         <div>
           {user.status}
         </div>
-        <div className={styles.users_about_lacation}>
+        {/* <div className={styles.users_about_lacation}>
           {'user.location.country'},
                 {'user.location.city'}
-        </div>
+        </div> */}
       </div>
     </div>
   )

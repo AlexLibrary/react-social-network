@@ -1,9 +1,11 @@
 import { getAuthUserData } from "./reducer_auth";
 
-const INITIALIZED_SUCCESS = "INITIALIZED_SUCCESS"
+const INITIALIZED_SUCCESS = 'reducer_app/INITIALIZED_SUCCESS'
+const SET_GLOBAL_ERROR = 'reducer_app/SET_GLOBAL_ERROR'
 
 const initialState = {
-  initialized: false
+  initialized: false,
+  globalError: null
 }
 
 const appReducer = (state = initialState, action) => {
@@ -13,12 +15,18 @@ const appReducer = (state = initialState, action) => {
         ...state,
         initialized: true
       };
+    case SET_GLOBAL_ERROR:
+      return {
+        ...state,
+        globalError: action.message
+      };
     default:
       return state;
   }
 }
 
 export const initializedSuccess = () => ({ type: INITIALIZED_SUCCESS })
+export const setGlobalError = (message) => ({ type: SET_GLOBAL_ERROR, message })
 
 export const initializeApp = () => (dispatch) => {
   let promise = dispatch(getAuthUserData())

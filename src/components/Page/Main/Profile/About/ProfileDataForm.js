@@ -13,9 +13,9 @@ const ProfileDataForm = ({ profile, cancelEdit, handleSubmit, error }) => {
         {error && error}
       </div>
       <h2>fullName</h2>
-      {createField('fullName', Input, 'fullName', [requiredField])}
+      {createField('fullName', Input, 'fullName', [requiredField], { type: 'input' })}
       <h2>Обо мне</h2>
-      {createField('aboutMe', Input, 'aboutMe', [requiredField])}
+      {createField('aboutMe', Input, 'aboutMe', [requiredField], { type: 'input' })}
 
       <h2>lookingForAJob</h2>
       {createField('lookingForAJob', Input, '', [requiredField], { type: 'checkbox' })}

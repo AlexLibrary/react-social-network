@@ -5,6 +5,13 @@
     max-width: 600px;
     height: 300px;
   }
+  input[type="input"],
+  input[type="url"],
+  textarea{
+    padding: 4px 10px;
+    border: 1px solid #eee;
+    width: 100%;
+  }
   .status{
     display: flex;
     flex-wrap: wrap;
