@@ -8,7 +8,7 @@ const Dialogs = (props) => {
   const friendsElement = props.dialogPage.friends.map(obj =>
     <NavLink activeClassName={styles.a_active} to={`/dialogs/${obj.id}`} key={obj.id}>{obj.name}</NavLink>
   )
-  const messagesElement = props.dialogPage.input.messages.map(obj =>
+  const messagesElement = props.dialogPage.messages.map(obj =>
     <div key={obj.id}>{obj.message}</div>
   )
 
