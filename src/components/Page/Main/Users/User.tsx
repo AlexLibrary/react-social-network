@@ -1,8 +1,17 @@
 import React from 'react'
 import styles from './style.module.scss'
 import { NavLink } from 'react-router-dom'
+import { UserType } from '../../../../types'
 
-const User = ({ user, followingInProgress, unfollow, follow }) => {
+type PropsType = {
+  user: UserType
+  followingInProgress: Array<number>
+
+  unfollow: (userId: number) => void
+  follow: (userId: number) => void
+}
+
+const User: React.FC<PropsType> = ({ user, followingInProgress, unfollow, follow }) => {
   return (
     <div className={styles.users_wrapper}>
       <div className={styles.users_face} >
@@ -31,10 +40,6 @@ const User = ({ user, followingInProgress, unfollow, follow }) => {
         <div>
           {user.status}
         </div>
-        {/* <div className={styles.users_about_lacation}>
-          {'user.location.country'},
-                {'user.location.city'}
-        </div> */}
       </div>
     </div>
   )

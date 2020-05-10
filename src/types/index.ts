@@ -32,4 +32,5 @@ export type UserType = {
   photos: PhotosType
   totalCount: number
   error: string
+  followed: any
 }

@@ -1,8 +1,17 @@
 import React, { useState } from 'react'
 import styles from './style.module.scss'
 
-const Paginator = ({ totalItemsCount, pageSize, switchToAnotherPage, currentPage, portionSize }) => {
+type PropsType = {
+  totalItemsCount: number
+  pageSize: number
+  currentPage: number
+  portionSize: number
+  switchToAnotherPageNumber: (number: number) => void
+}
+
+const Paginator: React.FC<PropsType> = ({ totalItemsCount, pageSize, switchToAnotherPageNumber, currentPage, portionSize }) => {
   const [portionNumber, setPortionNumber] = useState(1)
+
   const totalPages = Math.ceil(totalItemsCount / pageSize)
 
   const portionCount = Math.ceil(totalPages / portionSize)
@@ -13,15 +22,15 @@ const Paginator = ({ totalItemsCount, pageSize, switchToAnotherPage, currentPage
     const numbers = []
     for (let i = 1; i <= totalPages; i++) {
       if (i >= leftPortionPageNumber && i <= rightPortionPageNumber)
-        numbers.push(NumberSpan(i))
+        numbers.push(SpanNumber(i))
     }
     return numbers
   }
 
-  const NumberSpan = (number) => (
+  const SpanNumber = (number: number) => (
     <span
       key={number}
-      onClick={() => switchToAnotherPage(number)}
+      onClick={() => switchToAnotherPageNumber(number)}
       className={
         currentPage === number ? `${styles.number} ${styles.number_active}` : styles.number
       }

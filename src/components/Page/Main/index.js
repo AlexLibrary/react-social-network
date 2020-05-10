@@ -19,7 +19,7 @@ const PageItems = () => {
         <Route exact path='/' render={() => <Redirect to='/profile' />} />
         <Route path='/dialogs' render={withSuspense(Dialogs)} />
         <Route path='/profile/:userId?' render={withSuspense(Profile)} />
-        <Route path='/users' render={withSuspense(Users)} />
+        <Route path='/users' render={withSuspense(() => <Users pageTitle={'Самураи'} />)} />
         <Route path='/login' render={withSuspense(Login)} />
         <Route path='*' render={() => <div>ERROR: 404</div>} />
       </Switch>
