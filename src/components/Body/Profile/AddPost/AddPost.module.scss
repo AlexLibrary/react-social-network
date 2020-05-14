@@ -1,0 +1,9 @@
+.addPost {
+  display: flex;
+  flex-direction: column;
+  padding-top: 20px;
+  textarea {
+    margin-bottom: 10px;
+  }
+}
+

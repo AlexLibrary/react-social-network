@@ -1,0 +1,59 @@
+@import '../../../utilsSass';
+.bg {
+  position: absolute;
+  width: 1170px;
+  height: 250px;
+  overflow: hidden;
+
+  border-radius: 10px;
+  background: linear-gradient(to top, white, #6A82FB);
+  .bgImage {
+    position: absolute;
+    top: -290%;
+    left: 0;
+    width: 100%;
+    height: fit-content;
+    z-index: 0;
+    opacity: 0.5;
+  }
+}
+.profile {
+  .inner{
+    display: flex;
+    margin-top: 50px;
+    .SideBar {
+      display: flex;
+      margin-right: 30px;
+      min-width: 300px;
+      height: fit-content;
+      padding: 20px;
+
+      border-radius: 10px;
+      border: 1px solid #eee;
+      box-shadow: 0 0 20px #eee;
+      label {
+        color: #111;
+        font-weight: 700;
+      }
+      div {
+        color: #888;
+        margin-bottom: 15px;
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+    }
+    .ContentBar {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      height: fit-content;
+      padding: 20px;
+
+      border-radius: 10px;
+      border: 1px solid #eee;
+      box-shadow: 0 0 20px #eee;
+    }
+  }
+}
+

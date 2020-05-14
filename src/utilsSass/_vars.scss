@@ -1,0 +1,38 @@
+// @colors
+$dark-shade100p          : #1f2041;
+$dark-shade75p           : #575870; //rgba(#1f2041, .75);
+$dark-shade50p           : #8f8fa0; //rgba(#1f2041, .5);
+$dark-shade25p           : #c7c7cf; //rgba(#1f2041, .25);
+$dark-shade5p            : #f4f4f6; //rgba(#1f2041, .05);
+$purple                  : #bc9cff;
+$green                   : #6fcf97;
+
+// @media size
+$desktopWidth            : 1280px;
+$smDesktopWidth          : 1024px;
+$tableWidth              : 768px;
+$smTableWidth            : 640px;
+$phoneWidth              : 480px;
+$smPhoneWidth            : 320px;
+
+/* ComponentsVariables */
+// SideBar
+// $Header: (
+//   width: 300px,
+//   bgColor: #222,
+//   color: #fff
+// );
+// $SideBarHeader: (
+//   bgColor: #111
+// );
+// $SideBarNav: (
+//   color: #fff
+// );
+// $SideBarFooter: (
+//   bgColor: #111
+// );
+// Body
+// $Body: (
+//   width: calc(100% - #{map-get($SideBar, "width")}),
+//   bgColor: #eee
+// );

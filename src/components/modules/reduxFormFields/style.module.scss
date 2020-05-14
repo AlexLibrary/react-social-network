@@ -1,10 +1,14 @@
 .reduxFormFields {
-  &.error {
+  position: relative;
+  &.error{
     input, textarea{
-      border: 1px solid red;
-    }
-    span {
-      color: red;
+      border-color: red;
     }
   }
+}
+.errorSpan {
+  position: absolute;
+  color: red;
+  top: 0;
+  right: 0;
 }

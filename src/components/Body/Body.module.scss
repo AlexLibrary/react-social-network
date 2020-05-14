@@ -1,0 +1,12 @@
+@import '../../utilsSass';
+
+.body {
+  padding: 20px 0;
+  overflow: auto;
+  width: 100%;
+  position: relative;
+
+  .main {
+    @include main
+  }
+}

@@ -1,6 +1,6 @@
 export type PostType = {
   id: number
-  post: string
+  message: string
   likes: number
 }
 export type ContactsType = {

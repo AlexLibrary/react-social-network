@@ -1,0 +1,129 @@
+.about {
+  display: flex;
+  height: 100%;
+  position: relative;
+  padding: 140px 30px 10px 200px;
+  height: 250px;
+  margin-bottom: 30px;
+  .avatar {
+    position: absolute;
+    bottom: -30px;
+    left: 25px;
+    z-index: 100;
+    width: 150px;
+    height: 150px;
+    overflow: hidden;
+    box-shadow: 0 0 20px #aaa;
+    border: 5px solid white;
+    background-color: white;
+    border-radius: 50%;
+    .span {
+      position: absolute;
+      display: flex;
+      align-items: center;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 5;
+      width: fit-content;
+      height: auto;
+
+      font-size: 12px;
+      font-weight: 700;
+      color: black;
+      opacity: 0;
+      transition: opacity 0.1s linear;
+      svg {
+        width: 30px;
+        height: 30px;
+        margin-right: 5px;
+      }
+    }
+    img {
+      transition: opacity 0.1s linear;
+    }
+  }
+  .avatarIsOwner {
+    cursor: pointer;
+    &:hover {
+      img {
+        opacity: 0.5;
+      }
+      .span {
+        opacity: 1;
+      }
+    }
+  }
+}
+
+  .user {
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+    .userName {
+      span {
+        color: #aaa;
+      }
+    }
+    .userStatus {
+      // margin-bottom: 30px;
+    }
+    .userEdit {
+      margin-top: auto;
+    }
+    .aboutUser {
+      display: flex;
+      .aboutUserTitles{
+
+      }
+      .aboutUserValues{
+        margin-left: 20px;
+      }
+    }
+  }
+
+  .icons {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    margin-left: auto;
+  }
+
+  .status{
+    & span {
+      width: 10%;
+    }
+    &_output{
+      padding: 5px 10px;
+      overflow: auto;
+      width: 90%;
+      cursor: pointer;
+        // &:hover {
+        //   background-color: #fff;
+        // }
+    }
+  }
+//   input[type="input"],
+//   input[type="url"],
+//   textarea{
+//     padding: 4px 10px;
+//     border: 1px solid #eee;
+//     width: 100%;
+//   }
+
+//     &_input{
+//       width: 90%;
+//       input {
+//         padding: 4px 10px;
+//         border: 1px solid #eee;
+//         width: 100%;
+//       }
+//     }
+//   }
+//   .editProfile{
+//     &_summaryError{
+//       padding: 5px;
+//       color: red;
+//     }
+//   }
+// }

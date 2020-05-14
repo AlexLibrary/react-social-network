@@ -12,9 +12,9 @@ const SAVE_PHOTO_SUCCESS = 'reducer_profile/SAVE_PHOTO_SUCCESS'
 
 const initialState = {
   posts: [
-    { id: 0, post: 'it\'s my first post', likes: 511 },
-    { id: 1, post: 'how are you', likes: 200 },
-    { id: 2, post: 'hi, how are you', likes: 101 },
+    { id: 0, message: 'it\'s my first post', likes: 511 },
+    { id: 1, message: 'how are you', likes: 200 },
+    { id: 2, message: 'hi, how are you', likes: 101 },
   ] as Array<PostType>,
   profile: null as ProfileType | null,
   status: null as string | null
@@ -28,7 +28,7 @@ const profileReducer = (state = initialState, action: any): InitialStateType => 
     case ADD_POST:
       const newPost = {
         id: state.posts.length,
-        post: action.newPost,
+        message: action.newPost,
         likes: 0
       }
       return {

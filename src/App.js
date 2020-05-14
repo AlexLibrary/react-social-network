@@ -1,15 +1,13 @@
 import React from "react";
-import HeaderContainer from "./components/Header/Container";
-import Page from "./components/Page";
-import Footer from "./components/Footer";
-import './App.scss'
+import styles from './App.module.scss'
 import { initializeApp, setGlobalError } from "./reducers/reducer_app";
 import { connect, Provider } from "react-redux";
-import Preloader from "./components/modules/Preloader";
-import Messenger from "./components/modules/Messenger/Messenger";
 import { HashRouter } from "react-router-dom";
 import store from "./redux_store";
-const S = 'App';
+import Preloader from "./components/modules/Preloader";
+import Messenger from "./components/modules/Messenger/Messenger";
+import SideBar from "./components/Header/Header";
+import Body from "./components/Body/Body";
 
 class App extends React.Component {
 
@@ -33,11 +31,9 @@ class App extends React.Component {
     }
 
     return (
-
-      <div className={`${S}`}>
-        <HeaderContainer />
-        <Page />
-        <Footer />
+      <div className={styles.App}>
+        <SideBar />
+        <Body />
         <Messenger />
       </div>
     )
