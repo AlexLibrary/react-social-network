@@ -22,7 +22,7 @@ const Body = () => {
       <div className="container">
         <Switch>
           <Route exact path='/' render={() => <Redirect to='/profile' />} />
-          <Route path='/dialogs' render={withSuspense(Dialogs)} />
+          <Route path='/dialogs' render={withSuspense(() => <div className={styles.main}><Dialogs /></div>)} />
           <Route path='/profile/:userId?' render={withSuspense(Profile)} />
           <Route path='/users' render={withSuspense(() => <div className={styles.main}><Users pageTitle={'Пользователи'} /></div>)} />
           <Route path='/login' render={withSuspense(() => <div className={styles.main}><Login /></div>)} />
