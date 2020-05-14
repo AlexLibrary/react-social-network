@@ -5,4 +5,3 @@ GitHub Pages: [https://alexlibrary.github.io/react-social-network/](https://alex
 Email:    free@samuraijs.com
 Password: free
 </pre>
-Проект создан по урокам [Дмитрия Кузюбердина](https://github.com/Dimych) ссылка на плейлист [youtube](https://www.youtube.com/watch?v=gb7gMluAeao&list=PLcvhF2Wqh7DNVy1OCUpG3i5lyxyBWhGZ8)
