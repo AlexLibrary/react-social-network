@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "5c8dbc842c54771635c1d819eeb8d22f",
+    "revision": "7ca5a24cf5b0b15f57be3bd9123fbd16",
     "url": "/react-social-network/index.html"
   },
   {
@@ -8,76 +8,76 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/react-social-network/static/css/10.23a09ea8.chunk.css"
   },
   {
-    "revision": "d735696630797a630f0f",
+    "revision": "32de93bfaecb3429ff7a",
     "url": "/react-social-network/static/css/5.9b978b2d.chunk.css"
   },
   {
-    "revision": "09e820a8e6c3b3249aaf",
+    "revision": "cce7d42f010b47014acd",
     "url": "/react-social-network/static/css/6.e5c1d92a.chunk.css"
   },
   {
-    "revision": "3b76dce25f15431027da",
+    "revision": "8102e4f51fb9b5a105b4",
     "url": "/react-social-network/static/css/7.de485c0e.chunk.css"
   },
   {
-    "revision": "58d55dfbe34b0796bc2c",
-    "url": "/react-social-network/static/css/8.edb6ce7e.chunk.css"
+    "revision": "c607b7ade59e8e0e969f",
+    "url": "/react-social-network/static/css/8.4c34188f.chunk.css"
   },
   {
-    "revision": "68a7aff765910ec9ace5",
+    "revision": "6d574efd0fccd1cd17a6",
     "url": "/react-social-network/static/css/9.7c2be8f9.chunk.css"
   },
   {
-    "revision": "fdbd3ee186950f53a609",
+    "revision": "c18832caa812ece4f3e0",
     "url": "/react-social-network/static/css/main.3d673ac1.chunk.css"
   },
   {
-    "revision": "bb4af4caa247cb1e4d86",
-    "url": "/react-social-network/static/js/0.110a1ee9.chunk.js"
+    "revision": "9632471f62b6cdd830ee",
+    "url": "/react-social-network/static/js/0.5ffe6d01.chunk.js"
   },
   {
-    "revision": "05a41bc07f143db0d799",
-    "url": "/react-social-network/static/js/1.fdc08ba5.chunk.js"
+    "revision": "d42a2660cc7aca17264a",
+    "url": "/react-social-network/static/js/1.50a67f4c.chunk.js"
   },
   {
     "revision": "a43178059d67727bd861",
     "url": "/react-social-network/static/js/10.b2d42ebc.chunk.js"
   },
   {
-    "revision": "d79802913e006d66ced0",
-    "url": "/react-social-network/static/js/2.9b49db00.chunk.js"
+    "revision": "4da0b87092aaf4c381d7",
+    "url": "/react-social-network/static/js/2.099d5ee9.chunk.js"
   },
   {
-    "revision": "d735696630797a630f0f",
-    "url": "/react-social-network/static/js/5.0b61ef61.chunk.js"
+    "revision": "32de93bfaecb3429ff7a",
+    "url": "/react-social-network/static/js/5.6bfbe532.chunk.js"
   },
   {
     "revision": "3453b8997016469371284a28c0e873e2",
-    "url": "/react-social-network/static/js/5.0b61ef61.chunk.js.LICENSE.txt"
+    "url": "/react-social-network/static/js/5.6bfbe532.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "09e820a8e6c3b3249aaf",
-    "url": "/react-social-network/static/js/6.5ed1d1a5.chunk.js"
+    "revision": "cce7d42f010b47014acd",
+    "url": "/react-social-network/static/js/6.97bd7b2e.chunk.js"
   },
   {
-    "revision": "3b76dce25f15431027da",
-    "url": "/react-social-network/static/js/7.d2649a02.chunk.js"
+    "revision": "8102e4f51fb9b5a105b4",
+    "url": "/react-social-network/static/js/7.231b11da.chunk.js"
   },
   {
-    "revision": "58d55dfbe34b0796bc2c",
-    "url": "/react-social-network/static/js/8.de69b9c8.chunk.js"
+    "revision": "c607b7ade59e8e0e969f",
+    "url": "/react-social-network/static/js/8.79ec5864.chunk.js"
   },
   {
-    "revision": "68a7aff765910ec9ace5",
-    "url": "/react-social-network/static/js/9.db9074b1.chunk.js"
+    "revision": "6d574efd0fccd1cd17a6",
+    "url": "/react-social-network/static/js/9.54ded7f9.chunk.js"
   },
   {
-    "revision": "fdbd3ee186950f53a609",
-    "url": "/react-social-network/static/js/main.19f84f91.chunk.js"
+    "revision": "c18832caa812ece4f3e0",
+    "url": "/react-social-network/static/js/main.efbacdd8.chunk.js"
   },
   {
-    "revision": "679478a7ccf1a23d0dc5",
-    "url": "/react-social-network/static/js/runtime-main.e0283b74.js"
+    "revision": "b4e30a3bcaeb027d13dd",
+    "url": "/react-social-network/static/js/runtime-main.cfcde2c9.js"
   },
   {
     "revision": "23be584d75e83ef4b1acfe9756584a59",
