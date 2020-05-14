@@ -6,7 +6,7 @@ import 'antd/es/space/style/index.css'
 import { List, Avatar, Space } from 'antd';
 import { LikeOutlined } from '@ant-design/icons';
 // import { Avatar } from 'antd';
-// import { UserOutlined } from '@ant-design/icons';
+import { UserOutlined } from '@ant-design/icons';
 
 const IconText = ({ icon, text }) => (
   <Space>
@@ -17,7 +17,7 @@ const IconText = ({ icon, text }) => (
 
 const Posts = (props) => {
 
-  const avatar = props.profile.photos.small || "https://placem.at/people?w=70&h=70&random=1"
+  const avatar = props.profile.photos.small || ""
   const username = props.profile.fullName
 
   const SetPosts = () => {
@@ -33,7 +33,7 @@ const Posts = (props) => {
             ]}
           >
             <List.Item.Meta
-              avatar={<Avatar src={avatar} />}
+              avatar={<Avatar src={avatar} icon={<UserOutlined />} />}
               // title={username}
               description={username}
             />

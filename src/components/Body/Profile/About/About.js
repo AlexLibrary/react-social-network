@@ -5,7 +5,8 @@ import ProfileDataForm from "./ProfileDataForm";
 import { GithubOutlined, FacebookFilled, TwitterOutlined, InstagramOutlined, YoutubeFilled, LinkOutlined, GlobalOutlined } from '@ant-design/icons';
 import { Vk } from '../../../modules/Icons'
 import { CloudUploadOutlined } from '@ant-design/icons'
-import { Button, Modal } from 'antd';
+import { Button, Modal, Avatar } from 'antd';
+import { UserOutlined } from '@ant-design/icons';
 
 const About = (props) => {
   const [editMode, setEditMode] = useState(false);
@@ -32,7 +33,8 @@ const About = (props) => {
     <div className={styles.about}>
       <label className={props.isOwner ? `${styles.avatar} ${styles.avatarIsOwner}` : `${styles.avatar}`}>
         {props.isOwner && <input type="file" onChange={handlePhotoSelected} />}
-        <img src={props.profile.photos.large || "https://placem.at/people?w=300&h=300&random=1"} alt='largePhoto' />
+        <Avatar size={140} src={props.profile.photos.large || ""} icon={<UserOutlined />} />
+        {/* <img src={props.profile.photos.large || "https://placem.at/people?w=300&h=300&random=1"} alt='largePhoto' /> */}
         {props.isOwner && <span className={styles.span}><CloudUploadOutlined />Upload photo</span>}
       </label>
       <div className={styles.user}>
